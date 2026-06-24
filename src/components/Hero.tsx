@@ -11,8 +11,8 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif italic text-theme-text-dark leading-[1.1] mb-8">
-            Beautiful, high-performing websites for Hereford’s best local businesses.
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-theme-text-dark leading-[1.1] mb-8">
+            Premium websites for Hereford's local businesses.
           </h1>
           <p className="text-lg md:text-xl text-theme-text-light mb-10 max-w-2xl mx-auto leading-relaxed">
             We design, host, and manage a premium digital presence for your company, so you can focus entirely on running your business. No upfront costs, no tech headaches.
