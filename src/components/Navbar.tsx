@@ -10,7 +10,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="text-xl font-serif font-semibold tracking-tight uppercase text-theme-text-dark">
-          Wye Valley<span className="font-sans font-light opacity-60 ml-1">Web</span>
+          Wye Design
         </div>
         
         <div className="hidden md:flex items-center gap-8">
