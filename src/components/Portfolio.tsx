@@ -6,7 +6,8 @@ const portfolioItems = [
     title: "The Modern Restaurant Experience",
     description: "A visual-first design crafted for cafes and restaurants. Features a mobile-perfect, readable menu and seamless integration with your table booking system.",
     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop",
-    reverse: false
+    reverse: false,
+    link: "https://showcase1.wyedesign.co.uk"
   },
   {
     title: "Premium Tradesman Portfolio",
@@ -69,10 +70,17 @@ export default function Portfolio() {
                 <p className="text-lg text-theme-text-light font-normal leading-relaxed mb-10">
                   {item.description}
                 </p>
-                <button className="group flex items-center gap-2 text-theme-accent text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity w-max pb-1 border-b border-theme-accent">
-                  View Live Example
-                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </button>
+                {item.link ? (
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 text-theme-accent text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity w-max pb-1 border-b border-theme-accent">
+                    View Live Example
+                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </a>
+                ) : (
+                  <button className="group flex items-center gap-2 text-theme-accent text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity w-max pb-1 border-b border-theme-accent">
+                    View Live Example
+                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </button>
+                )}
               </motion.div>
 
             </div>
