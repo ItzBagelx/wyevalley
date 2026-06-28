@@ -73,7 +73,7 @@ export default function Footer() {
       </div>
       
       <div className="max-w-7xl mx-auto mt-24 pt-6 border-t border-theme-bg-gray flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest text-theme-text-dark opacity-60 font-bold">
-        <p>&copy; {new Date().getFullYear()} Wye Valley Web. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Wye Valley Design. All rights reserved.</p>
         <div className="flex gap-6">
           <a href="#" className="hover:text-theme-accent transition-colors">Privacy Policy</a>
           <a href="#" className="hover:text-theme-accent transition-colors">Terms of Service</a>
