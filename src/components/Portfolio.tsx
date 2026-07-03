@@ -5,20 +5,20 @@ const portfolioItems = [
   {
     title: "The Modern Restaurant Experience",
     description: "A visual-first design crafted for cafes and restaurants. Features a mobile-perfect, readable menu and seamless integration with your table booking system.",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop",
     reverse: false,
     link: "https://showcase1.wyedesign.co.uk"
   },
   {
     title: "Premium Tradesman Portfolio",
     description: "Built for electricians, plumbers, and builders who want to attract high-end residential work. Showcases past projects with crisp galleries and instant quote request forms.",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1931&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop",
     reverse: true
   },
   {
     title: "The Boutique Salon Booking",
     description: "An elegant, airy aesthetic tailored for hair salons and spas. Focuses on stylist profiles, service menus, and frictionless online booking integrations.",
-    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1974&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop",
     reverse: false
   }
 ];
@@ -28,8 +28,8 @@ export default function Portfolio() {
     <section className="py-24 px-6 bg-theme-bg">
       <div className="max-w-7xl mx-auto">
         <div className="mb-20 text-center">
-          <h2 className="text-4xl md:text-5xl font-serif italic mb-6 text-theme-text-dark">Selected Work</h2>
-          <p className="text-lg text-theme-text-light font-normal max-w-2xl mx-auto">Premium digital storefronts engineered for performance and conversion.</p>
+          <h2 className="text-4xl md:text-5xl font-serif italic mb-6 text-theme-text-dark">Our Work</h2>
+          <p className="text-lg text-theme-text-light font-normal max-w-2xl mx-auto">Premium digital spaces engineered for performance and conversion</p>
         </div>
 
         <div className="space-y-32">
@@ -49,6 +49,8 @@ export default function Portfolio() {
                     <img 
                       src={item.image} 
                       alt={item.title} 
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>

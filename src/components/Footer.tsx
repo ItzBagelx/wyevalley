@@ -8,11 +8,10 @@ export default function Footer() {
         <div className="w-full lg:w-5/12">
           <h2 className="text-4xl md:text-5xl font-serif italic mb-8">Ready to elevate your business online?</h2>
           <p className="text-theme-text-light font-normal leading-relaxed mb-8">
-            Stop losing customers to outdated websites. Partner with us for a premium, hassle-free digital presence that actually drives growth.
+            Stop losing customers from a poor digital presence. Partner with us for a premium, hassle-free digital presence that will actually give results.
           </p>
           <div className="space-y-2 text-theme-text-light font-normal text-sm">
-             <p>hello@wyevalleyweb.co.uk</p>
-             <p>01432 000000</p>
+             <p>wyevalleydesign@gmail.com</p>
              <p>Hereford, UK</p>
           </div>
         </div>

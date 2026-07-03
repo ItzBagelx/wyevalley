@@ -4,18 +4,18 @@ import { Smartphone, Zap, ShieldCheck } from 'lucide-react';
 const pillars = [
   {
     icon: Smartphone,
-    title: "Flawless Mobile Design",
-    description: "Your customers expect a flawless, instant experience whether they are booking a table on their phone or requesting a quote on their laptop."
+    title: "Flawless mobile design",
+    description: "Your customers need a reliable, instant experience whether they are booking a table on their phone or requesting a quote on their laptop."
   },
   {
     icon: Zap,
-    title: "Lightning-Fast Loading",
-    description: "We deliver premium, custom-coded designs that load instantly. A fast website means more inquiries, more bookings, and better SEO."
+    title: "Lightning-fast loading",
+    description: "We deliver premium, custom-coded designs made just for you that load instantly. A fast website means more inquiries, more bookings and better SEO"
   },
   {
     icon: ShieldCheck,
-    title: "Fully Managed Hosting",
-    description: "We handle the servers, the security, and the daily backups. Your website never goes down, and you never have to worry about updates."
+    title: "Fully managed hosting",
+    description: "We handle the servers, the security and the daily backups. We take care of it all, hassle free."
   }
 ];
 
@@ -24,9 +24,9 @@ export default function ValueProposition() {
     <section className="py-24 bg-theme-bg-light px-6 border-y border-theme-bg-gray">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-4xl md:text-5xl font-serif italic mb-8 text-theme-text-dark">A standard website isn't enough anymore.</h2>
+          <h2 className="text-4xl md:text-5xl font-serif italic mb-8 text-theme-text-dark">Online presence is a must</h2>
           <p className="text-lg text-theme-text-light font-normal leading-relaxed">
-            Your customers expect a flawless, instant experience whether they are booking a table on their phone or requesting a quote on their laptop. We deliver premium, custom-coded designs that load instantly and never go down.
+            Your customers need a premium, hassle-free experience whether they are booking a table on their phone or requesting a quote on their laptop. We deliver intuitive, high end, custom-coded designs for all your needs.
           </p>
         </div>
 

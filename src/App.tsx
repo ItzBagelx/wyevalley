@@ -1,10 +1,12 @@
+import { Suspense, lazy } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import ValueProposition from './components/ValueProposition';
-import Portfolio from './components/Portfolio';
-import ManagedModel from './components/ManagedModel';
-import Pricing from './components/Pricing';
-import Footer from './components/Footer';
+
+const ValueProposition = lazy(() => import('./components/ValueProposition'));
+const Portfolio = lazy(() => import('./components/Portfolio'));
+const ManagedModel = lazy(() => import('./components/ManagedModel'));
+const Pricing = lazy(() => import('./components/Pricing'));
+const Footer = lazy(() => import('./components/Footer'));
 
 export default function App() {
   return (
@@ -12,12 +14,22 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <ValueProposition />
-        <Portfolio />
-        <ManagedModel />
-        <Pricing />
+        <Suspense fallback={<div className="h-24 bg-theme-bg" />}>
+          <ValueProposition />
+        </Suspense>
+        <Suspense fallback={<div className="h-24 bg-theme-bg" />}>
+          <Portfolio />
+        </Suspense>
+        <Suspense fallback={<div className="h-24 bg-theme-bg" />}>
+          <ManagedModel />
+        </Suspense>
+        <Suspense fallback={<div className="h-24 bg-theme-bg" />}>
+          <Pricing />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={<div className="h-24 bg-theme-bg" />}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

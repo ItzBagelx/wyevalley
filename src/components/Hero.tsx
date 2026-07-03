@@ -12,19 +12,19 @@ export default function Hero() {
           className="max-w-4xl mx-auto"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-theme-text-dark leading-[1.1] mb-8">
-            Premium websites for Hereford's local businesses.
+            Premium websites for Hereford's local business
           </h1>
           <p className="text-lg md:text-xl text-theme-text-light mb-10 max-w-2xl mx-auto leading-relaxed">
-            We design, host, and manage a premium digital presence for your company, so you can focus entirely on running your business. No upfront costs, no tech headaches.
+            We design, host and manage a high end digital space for your company, so you can focus on what matters most. All done stress free.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button className="w-full sm:w-auto px-8 py-4 bg-theme-accent text-white rounded-full text-sm font-bold uppercase tracking-wider hover:opacity-90 transition-all flex items-center justify-center gap-2 group">
-              View Our Work
+              View our work
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
             <button className="w-full sm:w-auto px-8 py-4 bg-transparent border border-theme-text text-theme-text rounded-full text-sm font-bold uppercase tracking-wider hover:bg-theme-bg-alt transition-all">
-              Book a Free Consultation
+              Book a free consultation
             </button>
           </div>
         </motion.div>

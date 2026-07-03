@@ -6,19 +6,19 @@ const steps = [
     number: "01",
     icon: PenTool,
     title: "Premium Custom Design",
-    description: "We don't use clunky templates. We custom-build a modern website tailored to your brand and your best customers."
+    description: "We come to you, the owner, and custom build a modern website tailored to your brand and your needs"
   },
   {
     number: "02",
     icon: Server,
-    title: "Enterprise Hosting & Security",
+    title: "Enterprise hosting and security",
     description: "Your site is hosted on our world-class infrastructure. It stays lightning-fast, secure, and online 24/7."
   },
   {
     number: "03",
     icon: RefreshCw,
     title: "Unlimited Updates",
-    description: "Changed your menu? Hired a new team member? Just send us an email, and we update your website that same day. We handle all the maintenance."
+    description: "Changed your menu? Hired a new team member? Just contact us, and we update your website to your needs. As many times as you like, no extra cost."
   }
 ];
 
@@ -27,9 +27,9 @@ export default function ManagedModel() {
     <section className="py-24 px-6 bg-theme-bg border-y border-theme-bg-gray text-theme-text">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-20">
-          <h2 className="text-4xl md:text-5xl font-serif italic mb-6 text-theme-text-dark">The "Fully Managed" Model</h2>
+          <h2 className="text-4xl md:text-5xl font-serif italic mb-6 text-theme-text-dark">All in one place</h2>
           <p className="text-xl text-theme-text-light font-normal leading-relaxed">
-            A VIP concierge service for your digital presence. You aren't just renting a site; you are hiring a dedicated web team.
+            We know how stressful it is running a company, let alone a website as well. We manage all things digital to let you focus on what matters most to your business.
           </p>
         </div>
 

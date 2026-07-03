@@ -4,7 +4,7 @@ import { Check } from 'lucide-react';
 const features = [
   "Custom Website Design",
   "Premium Reliable Hosting",
-  "Daily Backups & Maintenance",
+  "Frequent Backups & Maintenance",
   "SSL Security Certificate",
   "Ongoing Content Updates",
   "SEO Fundamentals Built-in"
