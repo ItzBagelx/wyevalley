@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "Georgia", serif;
+
+  --color-theme-bg: #F5F2ED;
+  --color-theme-bg-alt: #EAE4DB;
+  --color-theme-bg-light: #FDFCFB;
+  --color-theme-bg-gray: #DED8D0;
+  --color-theme-nav: #EEE6D8;
+  
+  --color-theme-text: #2D2D2D;
+  --color-theme-text-light: #4A4A4A;
+  --color-theme-text-dark: #1A1A1A;
+
+  --color-theme-accent: #4A5D4E;
+}
+
+@layer base {
+  body {
+    @apply bg-theme-bg text-theme-text font-sans antialiased selection:bg-theme-accent selection:text-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-theme-text-dark;
+  }
+}
