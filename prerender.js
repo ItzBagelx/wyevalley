@@ -8,8 +8,21 @@ const toAbsolute = (p) => path.resolve(__dirname, p);
 async function prerender() {
   const template = fs.readFileSync(toAbsolute('dist/index.html'), 'utf-8');
   
+  // Find the server entry file (Cloudflare Pages might hash it and put it in /assets)
+  let serverEntryPath = 'dist-server/entry-server.js';
+  if (!fs.existsSync(toAbsolute(serverEntryPath))) {
+    const assetsDir = toAbsolute('dist-server/assets');
+    if (fs.existsSync(assetsDir)) {
+      const files = fs.readdirSync(assetsDir);
+      const entryFile = files.find(f => f.startsWith('entry-server') && f.endsWith('.js'));
+      if (entryFile) {
+        serverEntryPath = `dist-server/assets/${entryFile}`;
+      }
+    }
+  }
+
   // Load the server entry we just built
-  const { render } = await import('./dist-server/entry-server.js');
+  const { render } = await import('./' + serverEntryPath);
 
   const appHtml = render();
 
