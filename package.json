@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build --outDir dist/static && vite build --ssr src/entry-server.tsx --outDir dist/server && node prerender.js",
-    "preview": "vite preview --outDir dist/static",
-    "clean": "rm -rf dist server.js",
+    "build": "vite build --outDir dist && vite build --ssr src/entry-server.tsx --outDir dist-server && node prerender.js",
+    "preview": "vite preview --outDir dist",
+    "clean": "rm -rf dist dist-server server.js",
     "lint": "tsc --noEmit"
   },
   "dependencies": {
