@@ -48,6 +48,6 @@
   offset-path: border-box;
   offset-distance: 0%;
   offset-rotate: auto;
-  animation: spark-travel 3s linear infinite;
+  animation: spark-travel 5s linear infinite;
   pointer-events: none;
 }
