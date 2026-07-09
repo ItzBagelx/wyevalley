@@ -40,16 +40,14 @@
 .btn-shimmer::before {
   content: '';
   position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: white;
-  box-shadow:
-    0 0 6px 3px rgba(255, 255, 255, 0.9),
-    0 0 14px 6px rgba(255, 255, 255, 0.4);
+  width: 40px;
+  height: 1.5px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.95));
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.35);
   offset-path: border-box;
   offset-distance: 0%;
-  animation: spark-travel 2s linear infinite;
+  offset-rotate: auto;
+  animation: spark-travel 3s linear infinite;
   pointer-events: none;
-  translate: -50% -50%;
 }
