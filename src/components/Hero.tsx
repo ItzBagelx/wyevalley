@@ -19,10 +19,21 @@ export default function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="w-full sm:w-auto px-8 py-4 bg-theme-accent text-white rounded-full text-sm font-bold uppercase tracking-wider hover:opacity-90 transition-all flex items-center justify-center gap-2 group">
+            <motion.button
+              whileHover={{ scale: 1.04, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+              className="btn-shimmer w-full sm:w-auto px-8 py-4 bg-theme-accent text-white rounded-full text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 group shadow-lg shadow-theme-accent/20 hover:shadow-xl hover:shadow-theme-accent/30 transition-shadow"
+            >
               View our work
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+              <motion.span
+                className="inline-flex"
+                animate={{ x: [0, 4, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                <ArrowRight className="w-4 h-4" />
+              </motion.span>
+            </motion.button>
             <button className="w-full sm:w-auto px-8 py-4 bg-transparent border border-theme-text text-theme-text rounded-full text-sm font-bold uppercase tracking-wider hover:bg-theme-bg-alt transition-all">
               Book a free consultation
             </button>
