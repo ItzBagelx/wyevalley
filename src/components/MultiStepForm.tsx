@@ -33,6 +33,7 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
     industry: '',
     goal: '',
     status: '',
+    notes: '',
     name: '',
     email: '',
     phone: ''
@@ -51,6 +52,7 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
         industry: '',
         goal: '',
         status: '',
+        notes: '',
         name: '',
         email: '',
         phone: ''
@@ -97,7 +99,7 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
         throw new Error(result.error || "Failed to submit request.");
       }
 
-      setStep(5); // Success step
+      setStep(6); // Success step
     } catch (err: any) {
       setSubmitError(err.message || "An unexpected error occurred. Please try again.");
     } finally {
@@ -127,7 +129,7 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
           >
             {/* Header */}
             <div className="flex justify-between items-center p-6 border-b border-theme-bg-gray">
-              {step > 1 && step < 5 ? (
+              {step > 1 && step < 6 ? (
                 <button onClick={() => setStep(prev => prev - 1)} className="text-theme-text-light hover:text-theme-text transition-colors flex items-center gap-1 text-sm font-medium">
                   <ChevronLeft className="w-4 h-4" /> Back
                 </button>
@@ -136,7 +138,7 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
               )}
               
               <div className="text-sm font-bold uppercase tracking-widest text-theme-text-light">
-                {step < 5 ? `Step ${step} of 4` : 'Success'}
+                {step < 6 ? `Step ${step} of 5` : 'Success'}
               </div>
 
               <button onClick={onClose} className="w-10 h-10 flex items-center justify-center rounded-full bg-theme-bg-gray/50 hover:bg-theme-bg-gray text-theme-text transition-colors">
@@ -235,10 +237,43 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
                   </motion.div>
                 )}
 
-                {/* Step 4: Contact Form */}
+                {/* Step 4: Extra Details / Notes */}
                 {step === 4 && (
                   <motion.div
                     key="step4"
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -40 }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute inset-0 p-6 sm:p-8 flex flex-col h-full"
+                  >
+                    <h3 className="text-2xl font-serif text-theme-text-dark mb-4">Anything else you'd like us to know? <span className="text-sm font-sans font-normal text-theme-text-light">(Optional)</span></h3>
+                    <div className="flex flex-col gap-4 flex-1">
+                      <textarea
+                        value={formData.notes}
+                        onChange={e => setFormData(prev => ({...prev, notes: e.target.value}))}
+                        className="w-full flex-1 p-4 rounded-xl border border-theme-bg-gray bg-white focus:outline-none focus:border-theme-accent focus:ring-1 focus:ring-theme-accent transition-all resize-none text-theme-text"
+                        placeholder="Tell us about your brand, any specific design references you like, or unique features you need..."
+                        rows={6}
+                      />
+                      
+                      <div className="pt-2">
+                        <button 
+                          onClick={() => setStep(prev => prev + 1)}
+                          className="w-full py-4 bg-theme-accent text-white rounded-xl font-bold uppercase tracking-wider hover:opacity-90 transition-all flex justify-center items-center gap-2"
+                        >
+                          {formData.notes.trim() ? "Continue" : "Skip & Continue"}
+                          <ArrowRight className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Step 5: Contact Form */}
+                {step === 5 && (
+                  <motion.div
+                    key="step5"
                     initial={{ opacity: 0, x: 40 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -40 }}
@@ -315,10 +350,10 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
                   </motion.div>
                 )}
 
-                {/* Step 5: Success */}
-                {step === 5 && (
+                {/* Step 6: Success */}
+                {step === 6 && (
                   <motion.div
-                    key="step5"
+                    key="step6"
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ type: "spring", bounce: 0.5 }}
@@ -341,12 +376,12 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
             </div>
             
             {/* Progress indicator */}
-            {step < 5 && (
+            {step < 6 && (
               <div className="h-1.5 w-full bg-theme-bg-gray absolute bottom-0 left-0">
                 <motion.div 
                   className="h-full bg-theme-accent"
-                  initial={{ width: '25%' }}
-                  animate={{ width: `${(step / 4) * 100}%` }}
+                  initial={{ width: '20%' }}
+                  animate={{ width: `${(step / 5) * 100}%` }}
                   transition={{ duration: 0.3 }}
                 />
               </div>

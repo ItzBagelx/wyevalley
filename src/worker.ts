@@ -14,6 +14,7 @@ export default {
           industry: string;
           goal: string;
           status: string;
+          notes?: string;
           name: string;
           email: string;
           phone?: string;
@@ -71,10 +72,16 @@ export default {
                   <td style="padding: 10px 0; color: #666; font-size: 14px;">Website Goal:</td>
                   <td style="padding: 10px 0; color: #1a1a1a; font-weight: 500; font-size: 14px;">${data.goal}</td>
                 </tr>
-                <tr>
+                <tr style="${data.notes ? 'border-bottom: 1px solid #eaeaea;' : ''}">
                   <td style="padding: 10px 0; color: #666; font-size: 14px;">Has Current Site?</td>
                   <td style="padding: 10px 0; color: #1a1a1a; font-weight: 500; font-size: 14px;">${data.status}</td>
                 </tr>
+                ${data.notes ? `
+                <tr>
+                  <td style="padding: 10px 0; color: #666; font-size: 14px; vertical-align: top;">Additional Details:</td>
+                  <td style="padding: 10px 0; color: #1a1a1a; font-size: 14px; line-height: 1.5; white-space: pre-wrap;">${data.notes}</td>
+                </tr>
+                ` : ''}
               </table>
             </div>
 
