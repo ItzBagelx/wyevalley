@@ -1,7 +1,11 @@
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 
-export default function Hero() {
+type HeroProps = {
+  openModal: () => void;
+};
+
+export default function Hero({ openModal }: HeroProps) {
   return (
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden px-6">
       <div className="max-w-7xl mx-auto text-center">
@@ -35,6 +39,7 @@ export default function Hero() {
               </motion.span>
             </motion.button>
             <motion.button
+              onClick={openModal}
               whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: 'spring', stiffness: 400, damping: 20 }}

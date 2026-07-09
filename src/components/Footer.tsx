@@ -1,6 +1,10 @@
 import { ArrowRight } from 'lucide-react';
 
-export default function Footer() {
+type FooterProps = {
+  openModal: () => void;
+};
+
+export default function Footer({ openModal }: FooterProps) {
   return (
     <footer className="bg-theme-bg text-theme-text-dark pt-24 pb-12 px-6 border-t border-theme-bg-gray">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
@@ -16,56 +20,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="w-full lg:w-7/12">
-          <div className="bg-theme-text-dark text-theme-bg p-8 md:p-12 rounded-3xl flex flex-col justify-between shadow-2xl relative overflow-hidden">
-            <h3 className="text-2xl font-serif italic mb-8">Request a Consultation</h3>
-            <form className="space-y-6 relative z-10" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-[10px] font-bold uppercase tracking-widest text-white/60">Name</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white/30 transition-colors"
-                    placeholder="John Doe"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="business" className="text-[10px] font-bold uppercase tracking-widest text-white/60">Business Name</label>
-                  <input 
-                    type="text" 
-                    id="business" 
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white/30 transition-colors"
-                    placeholder="Acme Corp"
-                  />
-                </div>
-              </div>
-              
-              <div className="space-y-2">
-                <label htmlFor="phone" className="text-[10px] font-bold uppercase tracking-widest text-white/60">Phone Number</label>
-                <input 
-                  type="tel" 
-                  id="phone" 
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white/30 transition-colors"
-                  placeholder="07700 900000"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-[10px] font-bold uppercase tracking-widest text-white/60">How can we help your business grow?</label>
-                <textarea 
-                  id="message" 
-                  rows={4}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white/30 transition-colors resize-none"
-                  placeholder="Tell us about your current website and your goals..."
-                ></textarea>
-              </div>
-
-              <button type="submit" className="w-full py-4 mt-4 bg-theme-accent text-white rounded-full text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-opacity flex justify-center items-center gap-2 group">
-                Send Message
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </form>
+        <div className="w-full lg:w-7/12 flex flex-col justify-center">
+          <div className="bg-theme-text-dark text-theme-bg p-10 md:p-14 rounded-3xl shadow-2xl relative overflow-hidden h-full flex flex-col justify-center">
+            <h3 className="text-3xl font-serif italic mb-6 text-white">Let's build something great.</h3>
+            <p className="text-white/70 mb-10 leading-relaxed max-w-md">
+              Answer a few quick questions about your business and goals, and we'll send you a custom proposal within 24 hours.
+            </p>
+            <button 
+              onClick={openModal}
+              className="w-max px-8 py-4 bg-theme-accent text-white rounded-full text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-opacity flex justify-center items-center gap-2 group"
+            >
+              Start Your Proposal
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
           </div>
         </div>
 

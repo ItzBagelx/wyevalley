@@ -10,7 +10,11 @@ const features = [
   "SEO Fundamentals Built-in"
 ];
 
-export default function Pricing() {
+type PricingProps = {
+  openModal: () => void;
+};
+
+export default function Pricing({ openModal }: PricingProps) {
   return (
     <section className="py-24 px-6 bg-theme-bg-light">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
@@ -72,7 +76,10 @@ export default function Pricing() {
               ))}
             </ul>
             
-            <button className="w-full py-4 bg-theme-text-dark text-white rounded-full text-sm font-bold uppercase tracking-wider hover:bg-theme-text transition-colors">
+            <button 
+              onClick={openModal}
+              className="w-full py-4 bg-theme-text-dark text-white rounded-full text-sm font-bold uppercase tracking-wider hover:bg-theme-text transition-colors"
+            >
               Start Your Project
             </button>
             <p className="text-center text-[10px] uppercase tracking-widest text-theme-text-light mt-4 font-bold opacity-70">£0 Upfront Setup Fee</p>

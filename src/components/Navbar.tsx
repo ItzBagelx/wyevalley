@@ -1,6 +1,10 @@
 import { motion } from 'motion/react';
 
-export default function Navbar() {
+type NavbarProps = {
+  openModal: () => void;
+};
+
+export default function Navbar({ openModal }: NavbarProps) {
   return (
     <motion.nav 
       initial={{ opacity: 0, y: -20 }}
@@ -20,6 +24,7 @@ export default function Navbar() {
         </div>
 
         <motion.button
+          onClick={openModal}
           whileHover={{ scale: 1.04, y: -2 }}
           whileTap={{ scale: 0.97 }}
           transition={{ type: 'spring', stiffness: 400, damping: 20 }}
