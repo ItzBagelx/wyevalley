@@ -38,10 +38,15 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
     phone: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
   // Reset form when opened
   useEffect(() => {
     if (isOpen) {
       setStep(1);
+      setSubmitError(null);
+      setIsSubmitting(false);
       setFormData({
         industry: '',
         goal: '',
@@ -72,11 +77,32 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
     }, 400); // Small delay so they see the selection
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send data to your backend/API
-    console.log("Form Submitted", formData);
-    setStep(5); // Success step
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch("/api/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json() as any;
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to submit request.");
+      }
+
+      setStep(5); // Success step
+    } catch (err: any) {
+      setSubmitError(err.message || "An unexpected error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!isOpen) return null;
@@ -221,14 +247,21 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
                   >
                     <h3 className="text-2xl font-serif text-theme-text-dark mb-6">Where should we send your proposal?</h3>
                     <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1">
+                      {submitError && (
+                        <div className="bg-red-50 text-red-600 text-xs px-4 py-3 rounded-lg border border-red-200">
+                          {submitError}
+                        </div>
+                      )}
+                      
                       <div>
                         <label className="block text-sm font-medium text-theme-text-light mb-1">Name</label>
                         <input 
                           required
                           type="text" 
+                          disabled={isSubmitting}
                           value={formData.name}
                           onChange={e => setFormData(prev => ({...prev, name: e.target.value}))}
-                          className="w-full px-4 py-3 rounded-lg border border-theme-bg-gray bg-white focus:outline-none focus:border-theme-accent focus:ring-1 focus:ring-theme-accent transition-all"
+                          className="w-full px-4 py-3 rounded-lg border border-theme-bg-gray bg-white focus:outline-none focus:border-theme-accent focus:ring-1 focus:ring-theme-accent transition-all disabled:opacity-50"
                           placeholder="Jane Doe"
                         />
                       </div>
@@ -237,9 +270,10 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
                         <input 
                           required
                           type="email" 
+                          disabled={isSubmitting}
                           value={formData.email}
                           onChange={e => setFormData(prev => ({...prev, email: e.target.value}))}
-                          className="w-full px-4 py-3 rounded-lg border border-theme-bg-gray bg-white focus:outline-none focus:border-theme-accent focus:ring-1 focus:ring-theme-accent transition-all"
+                          className="w-full px-4 py-3 rounded-lg border border-theme-bg-gray bg-white focus:outline-none focus:border-theme-accent focus:ring-1 focus:ring-theme-accent transition-all disabled:opacity-50"
                           placeholder="jane@example.com"
                         />
                       </div>
@@ -247,17 +281,34 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
                         <label className="block text-sm font-medium text-theme-text-light mb-1">Phone Number (Optional)</label>
                         <input 
                           type="tel" 
+                          disabled={isSubmitting}
                           value={formData.phone}
                           onChange={e => setFormData(prev => ({...prev, phone: e.target.value}))}
-                          className="w-full px-4 py-3 rounded-lg border border-theme-bg-gray bg-white focus:outline-none focus:border-theme-accent focus:ring-1 focus:ring-theme-accent transition-all"
+                          className="w-full px-4 py-3 rounded-lg border border-theme-bg-gray bg-white focus:outline-none focus:border-theme-accent focus:ring-1 focus:ring-theme-accent transition-all disabled:opacity-50"
                           placeholder="07123 456789"
                         />
                       </div>
                       
                       <div className="mt-auto pt-4">
-                        <button type="submit" className="w-full py-4 bg-theme-accent text-white rounded-xl font-bold uppercase tracking-wider hover:opacity-90 transition-all flex justify-center items-center gap-2">
-                          Request Proposal
-                          <ArrowRight className="w-4 h-4" />
+                        <button 
+                          type="submit" 
+                          disabled={isSubmitting}
+                          className="w-full py-4 bg-theme-accent text-white rounded-xl font-bold uppercase tracking-wider hover:opacity-90 transition-all flex justify-center items-center gap-2 disabled:opacity-75"
+                        >
+                          {isSubmitting ? (
+                            <>
+                              <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                              </svg>
+                              Sending...
+                            </>
+                          ) : (
+                            <>
+                              Request Proposal
+                              <ArrowRight className="w-4 h-4" />
+                            </>
+                          )}
                         </button>
                       </div>
                     </form>

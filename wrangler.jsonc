@@ -1,6 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "wyevalley",
+  "main": "src/worker.ts",
   "compatibility_date": "2026-07-09",
   "assets": {
     "directory": "./dist",
