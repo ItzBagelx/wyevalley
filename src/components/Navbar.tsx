@@ -19,9 +19,14 @@ export default function Navbar() {
           <a href="#" className="text-xs font-medium uppercase tracking-widest opacity-70 hover:opacity-100 transition-opacity text-theme-text">Pricing</a>
         </div>
 
-        <button className="px-5 py-2.5 bg-theme-accent text-white rounded-full text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity">
+        <motion.button
+          whileHover={{ scale: 1.04, y: -2 }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+          className="px-5 py-2.5 bg-theme-accent text-white rounded-full text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity"
+        >
           Let's Talk
-        </button>
+        </motion.button>
       </div>
     </motion.nav>
   );

@@ -34,9 +34,14 @@ export default function Hero() {
                 <ArrowRight className="w-4 h-4" />
               </motion.span>
             </motion.button>
-            <button className="w-full sm:w-auto px-8 py-4 bg-transparent border border-theme-text text-theme-text rounded-full text-sm font-bold uppercase tracking-wider hover:bg-theme-bg-alt transition-all">
+            <motion.button
+              whileHover={{ scale: 1.04, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+              className="w-full sm:w-auto px-8 py-4 bg-transparent border border-theme-text text-theme-text rounded-full text-sm font-bold uppercase tracking-wider hover:bg-theme-bg-alt transition-all"
+            >
               Book a free consultation
-            </button>
+            </motion.button>
           </div>
         </motion.div>
       </div>
