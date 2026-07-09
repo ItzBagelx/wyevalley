@@ -10,10 +10,11 @@ const portfolioItems = [
     link: "https://showcase1.wyedesign.co.uk"
   },
   {
-    title: "Premium Tradesman Portfolio",
-    description: "Built for electricians, plumbers, and builders who want to attract high-end residential work. Showcases past projects with crisp galleries and instant quote request forms.",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop",
-    reverse: true
+    title: "Lumina Energy",
+    description: "A bold, conversion-focused site built for an energy company offering solar panels, micro hydro systems, and battery storage. Guides visitors from interest to instant quote in seconds.",
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=800&auto=format&fit=crop",
+    reverse: true,
+    link: "https://showcase2.wyedesign.co.uk"
   },
   {
     title: "The Boutique Salon Booking",
