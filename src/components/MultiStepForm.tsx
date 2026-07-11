@@ -247,9 +247,10 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
                     transition={{ duration: 0.3 }}
                     className="absolute inset-0 p-6 sm:p-8 flex flex-col h-full"
                   >
-                    <h3 className="text-2xl font-serif text-theme-text-dark mb-4">Anything else you'd like us to know? <span className="text-sm font-sans font-normal text-theme-text-light">(Optional)</span></h3>
+                    <h3 className="text-2xl font-serif text-theme-text-dark mb-4">Anything else you'd like us to know?</h3>
                     <div className="flex flex-col gap-4 flex-1">
                       <textarea
+                        required
                         value={formData.notes}
                         onChange={e => setFormData(prev => ({...prev, notes: e.target.value}))}
                         className="w-full flex-1 p-4 rounded-xl border border-theme-bg-gray bg-white focus:outline-none focus:border-theme-accent focus:ring-1 focus:ring-theme-accent transition-all resize-none text-theme-text"
@@ -259,10 +260,11 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
                       
                       <div className="pt-2">
                         <button 
+                          disabled={!formData.notes.trim()}
                           onClick={() => setStep(prev => prev + 1)}
-                          className="w-full py-4 bg-theme-accent text-white rounded-xl font-bold uppercase tracking-wider hover:opacity-90 transition-all flex justify-center items-center gap-2"
+                          className="w-full py-4 bg-theme-accent text-white rounded-xl font-bold uppercase tracking-wider hover:opacity-90 transition-all flex justify-center items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
-                          {formData.notes.trim() ? "Continue" : "Skip & Continue"}
+                          Continue
                           <ArrowRight className="w-4 h-4" />
                         </button>
                       </div>

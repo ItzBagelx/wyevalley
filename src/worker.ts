@@ -14,15 +14,15 @@ export default {
           industry: string;
           goal: string;
           status: string;
-          notes?: string;
+          notes: string;
           name: string;
           email: string;
           phone?: string;
         };
 
         // Basic validation
-        if (!data.name || !data.email) {
-          return new Response(JSON.stringify({ error: "Missing name or email" }), {
+        if (!data.name || !data.email || !data.notes?.trim()) {
+          return new Response(JSON.stringify({ error: "Missing name, email, or project details" }), {
             status: 400,
             headers: { "Content-Type": "application/json" }
           });
