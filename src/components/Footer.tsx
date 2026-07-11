@@ -21,14 +21,15 @@ export default function Footer({ openModal }: FooterProps) {
         </div>
 
         <div className="w-full lg:w-7/12 flex flex-col justify-center">
-          <div className="bg-theme-bg-light p-10 md:p-14 rounded-3xl shadow-xl relative overflow-hidden h-full flex flex-col justify-center border border-theme-bg-gray">
-            <h3 className="text-3xl font-serif italic mb-6 text-theme-text-dark">Let's build something great.</h3>
-            <p className="text-theme-text-light mb-10 leading-relaxed max-w-md">
+          <div className="bg-theme-accent p-10 md:p-14 rounded-3xl shadow-2xl relative overflow-hidden h-full flex flex-col justify-center text-white">
+            <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/5 rounded-full blur-xl pointer-events-none" />
+            <h3 className="text-3xl font-serif italic mb-6 text-white">Let's build something great.</h3>
+            <p className="text-white/80 mb-10 leading-relaxed max-w-md font-normal">
               Answer a few quick questions about your business and goals, and we'll send you a custom proposal within 24 hours.
             </p>
             <button 
               onClick={openModal}
-              className="w-max px-8 py-4 bg-theme-accent text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-theme-accent/90 transition-all flex justify-center items-center gap-2 group shadow-lg shadow-theme-accent/20"
+              className="w-max px-8 py-4 bg-white text-theme-accent rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white/95 transition-all flex justify-center items-center gap-2 group shadow-lg shadow-black/10"
             >
               Start Your Proposal
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
