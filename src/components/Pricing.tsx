@@ -136,11 +136,8 @@ export default function Pricing({ openModal }: PricingProps) {
         
         {/* Footnote context */}
         <div className="mt-16 text-center text-xs text-theme-text-light max-w-xl mx-auto leading-relaxed border-t border-theme-bg-gray/50 pt-8">
-          <p className="mb-3">
-            <strong>Fixed-Price Retainer:</strong> A £15/month retainer is required for fixed-price projects. This keeps your site online securely, and includes domain renewal and security updates.
-          </p>
           <p>
-            <strong>Why monthly pricing?</strong> Premium DIY builders like Wix or Squarespace cost £15–£30/month once you buy a domain name and custom email. For just a fraction more, we handle the hours of layout and development frustration for you.
+            <strong>Fixed-Price Retainer:</strong> A £15/month retainer is required for fixed-price projects. This keeps your site online securely, and includes domain renewal and security updates.
           </p>
         </div>
 
