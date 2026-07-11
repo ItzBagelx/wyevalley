@@ -26,7 +26,7 @@ const portfolioItems = [
 
 export default function Portfolio() {
   return (
-    <section className="py-24 px-6 bg-theme-bg">
+    <section id="portfolio" className="py-24 px-6 bg-theme-bg scroll-mt-12">
       <div className="max-w-7xl mx-auto">
         <div className="mb-20 text-center">
           <h2 className="text-4xl md:text-5xl font-serif italic mb-6 text-theme-text-dark">Our Work</h2>

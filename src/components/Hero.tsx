@@ -23,7 +23,8 @@ export default function Hero({ openModal }: HeroProps) {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <motion.button
+            <motion.a
+              href="#portfolio"
               whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: 'spring', stiffness: 400, damping: 20 }}
@@ -31,7 +32,7 @@ export default function Hero({ openModal }: HeroProps) {
             >
               View our work
               <ArrowRight className="w-4 h-4" />
-            </motion.button>
+            </motion.a>
             <motion.button
               onClick={openModal}
               whileHover={{ scale: 1.04, y: -2 }}
