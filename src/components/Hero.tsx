@@ -16,7 +16,7 @@ export default function Hero({ openModal }: HeroProps) {
           className="max-w-4xl mx-auto"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-theme-text-dark leading-[1.1] mb-8">
-            Premium websites for Hereford's local business
+            Premium websites for local business
           </h1>
           <p className="text-lg md:text-xl text-theme-text-light mb-10 max-w-2xl mx-auto leading-relaxed">
             We design, host and manage a high end digital space for your company, so you can focus on what matters most. All done stress free.

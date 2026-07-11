@@ -21,8 +21,8 @@ export default {
         };
 
         // Basic validation
-        if (!data.name || !data.email || !data.notes?.trim()) {
-          return new Response(JSON.stringify({ error: "Missing name, email, or project details" }), {
+        if (!data.name || !data.email) {
+          return new Response(JSON.stringify({ error: "Missing name or email" }), {
             status: 400,
             headers: { "Content-Type": "application/json" }
           });
