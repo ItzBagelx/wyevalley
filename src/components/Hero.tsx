@@ -40,7 +40,7 @@ export default function Hero({ openModal }: HeroProps) {
               transition={{ type: 'spring', stiffness: 400, damping: 20 }}
               className="w-full sm:w-auto px-8 py-4 bg-transparent border border-theme-text text-theme-text rounded-full text-sm font-bold uppercase tracking-wider hover:bg-theme-bg-alt transition-all"
             >
-              Book a free consultation
+              Get a quote
             </motion.button>
           </div>
         </motion.div>

@@ -93,10 +93,17 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
         body: JSON.stringify(formData)
       });
 
-      const result = await response.json() as any;
+      let result;
+      const text = await response.text();
+      try {
+        result = JSON.parse(text);
+      } catch (e) {
+        // This usually happens during local development if the Worker isn't running
+        throw new Error("Server returned an invalid response. If testing locally, ensure you are running 'wrangler pages dev'.");
+      }
 
       if (!response.ok) {
-        throw new Error(result.error || "Failed to submit request.");
+        throw new Error(result?.error || "Failed to submit request.");
       }
 
       setStep(6); // Success step

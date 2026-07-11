@@ -30,7 +30,8 @@ export default function Portfolio() {
       <div className="max-w-7xl mx-auto">
         <div className="mb-20 text-center">
           <h2 className="text-4xl md:text-5xl font-serif italic mb-6 text-theme-text-dark">Our Work</h2>
-          <p className="text-lg text-theme-text-light font-normal max-w-2xl mx-auto">Premium digital spaces engineered for performance and conversion</p>
+          <p className="text-lg text-theme-text-light font-normal max-w-2xl mx-auto mb-2">Premium digital spaces engineered for performance and conversion</p>
+          <p className="text-sm text-theme-text-light/70 italic max-w-2xl mx-auto">* Note: The websites featured below are concept projects showcasing our design capabilities.</p>
         </div>
 
         <div className="space-y-32">
