@@ -133,36 +133,36 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-theme-text-dark/40 backdrop-blur-sm"
+            className="absolute inset-0 bg-theme-text-dark/60 backdrop-blur-sm"
           />
           
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative w-full max-w-lg bg-theme-bg-light rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-white/50 flex flex-col max-h-[95dvh]"
+            className="relative w-full max-w-lg bg-theme-text-dark rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-white/10 flex flex-col max-h-[95dvh]"
           >
             {/* Header */}
-            <div className="flex justify-between items-center p-6 border-b border-theme-bg-gray">
+            <div className="flex justify-between items-center p-6 border-b border-white/10">
               {step > 1 && step < 6 ? (
-                <button onClick={() => setStep(prev => prev - 1)} className="text-theme-text-light hover:text-theme-text transition-colors flex items-center gap-1 text-sm font-medium">
+                <button onClick={() => setStep(prev => prev - 1)} className="text-white/60 hover:text-white transition-colors flex items-center gap-1 text-sm font-medium">
                   <ChevronLeft className="w-4 h-4" /> Back
                 </button>
               ) : (
                 <div className="w-16"></div> /* Placeholder for alignment */
               )}
               
-              <div className="text-sm font-bold uppercase tracking-widest text-theme-text-light">
+              <div className="text-sm font-bold uppercase tracking-widest text-white/60">
                 {step < 6 ? `Step ${step} of 5` : 'Success'}
               </div>
 
-              <button onClick={onClose} className="w-10 h-10 flex items-center justify-center rounded-full bg-theme-bg-gray/50 hover:bg-theme-bg-gray text-theme-text transition-colors">
+              <button onClick={onClose} className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors">
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             {/* Content Area with absolute positioning for slide transitions */}
-            <div className="relative flex-1 h-[70dvh] min-h-[350px] sm:h-[500px] sm:min-h-0 overflow-hidden bg-theme-bg-light">
+            <div className="relative flex-1 h-[70dvh] min-h-[350px] sm:h-[500px] sm:min-h-0 overflow-hidden bg-theme-text-dark">
               <AnimatePresence mode="wait">
                 
                 {/* Step 1: Industry */}
@@ -175,7 +175,7 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
                     transition={{ duration: 0.3 }}
                     className="absolute inset-0 p-6 sm:p-8 flex flex-col h-full overflow-y-auto"
                   >
-                    <h3 className="text-2xl font-serif text-theme-text-dark mb-6">What industry are you in?</h3>
+                    <h3 className="text-2xl font-serif text-white mb-6">What industry are you in?</h3>
                     <div className="space-y-3">
                       {industries.map((item) => (
                         <button
@@ -183,8 +183,8 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
                           onClick={() => handleSelect('industry', item)}
                           className={`w-full text-left px-5 py-4 rounded-xl border transition-all ${
                             formData.industry === item 
-                              ? 'border-theme-accent bg-theme-accent/5 text-theme-accent font-medium' 
-                              : 'border-theme-bg-gray hover:border-theme-accent/50 text-theme-text'
+                              ? 'border-theme-accent bg-theme-accent/10 text-theme-accent font-medium' 
+                              : 'border-white/10 bg-white/5 hover:border-white/30 text-white'
                           }`}
                         >
                           {item}
@@ -204,7 +204,7 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
                     transition={{ duration: 0.3 }}
                     className="absolute inset-0 p-6 sm:p-8 flex flex-col h-full overflow-y-auto"
                   >
-                    <h3 className="text-2xl font-serif text-theme-text-dark mb-6">What is your main goal for the new website?</h3>
+                    <h3 className="text-2xl font-serif text-white mb-6">What is your main goal for the new website?</h3>
                     <div className="space-y-3">
                       {goals.map((item) => (
                         <button
@@ -212,8 +212,8 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
                           onClick={() => handleSelect('goal', item)}
                           className={`w-full text-left px-5 py-4 rounded-xl border transition-all ${
                             formData.goal === item 
-                              ? 'border-theme-accent bg-theme-accent/5 text-theme-accent font-medium' 
-                              : 'border-theme-bg-gray hover:border-theme-accent/50 text-theme-text'
+                              ? 'border-theme-accent bg-theme-accent/10 text-theme-accent font-medium' 
+                              : 'border-white/10 bg-white/5 hover:border-white/30 text-white'
                           }`}
                         >
                           {item}
@@ -233,7 +233,7 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
                     transition={{ duration: 0.3 }}
                     className="absolute inset-0 p-6 sm:p-8 flex flex-col h-full overflow-y-auto"
                   >
-                    <h3 className="text-2xl font-serif text-theme-text-dark mb-6">Do you currently have a website?</h3>
+                    <h3 className="text-2xl font-serif text-white mb-6">Do you currently have a website?</h3>
                     <div className="space-y-3">
                       {statuses.map((item) => (
                         <button
@@ -241,8 +241,8 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
                           onClick={() => handleSelect('status', item)}
                           className={`w-full text-left px-5 py-4 rounded-xl border transition-all ${
                             formData.status === item 
-                              ? 'border-theme-accent bg-theme-accent/5 text-theme-accent font-medium' 
-                              : 'border-theme-bg-gray hover:border-theme-accent/50 text-theme-text'
+                              ? 'border-theme-accent bg-theme-accent/10 text-theme-accent font-medium' 
+                              : 'border-white/10 bg-white/5 hover:border-white/30 text-white'
                           }`}
                         >
                           {item}
@@ -262,12 +262,12 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
                     transition={{ duration: 0.3 }}
                     className="absolute inset-0 p-6 sm:p-8 flex flex-col h-full overflow-y-auto"
                   >
-                    <h3 className="text-2xl font-serif text-theme-text-dark mb-4">Anything else you'd like us to know?</h3>
+                    <h3 className="text-2xl font-serif text-white mb-4">Anything else you'd like us to know?</h3>
                     <div className="flex flex-col gap-4 flex-1">
                       <textarea
                         value={formData.notes}
                         onChange={e => setFormData(prev => ({...prev, notes: e.target.value}))}
-                        className="w-full flex-1 p-4 rounded-xl border border-theme-bg-gray bg-white focus:outline-none focus:border-theme-accent focus:ring-1 focus:ring-theme-accent transition-all resize-none text-theme-text"
+                        className="w-full flex-1 p-4 rounded-xl border border-white/10 bg-white/5 text-white focus:outline-none focus:border-theme-accent focus:ring-1 focus:ring-theme-accent transition-all resize-none placeholder-white/40"
                         placeholder="Tell us about your brand, any specific design references you like, or unique features you need..."
                         rows={6}
                       />
@@ -295,46 +295,46 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
                     transition={{ duration: 0.3 }}
                     className="absolute inset-0 p-6 sm:p-8 flex flex-col h-full overflow-y-auto"
                   >
-                    <h3 className="text-2xl font-serif text-theme-text-dark mb-6">Where should we send your proposal?</h3>
+                    <h3 className="text-2xl font-serif text-white mb-6">Where should we send your proposal?</h3>
                     <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1">
                       {submitError && (
-                        <div className="bg-red-50 text-red-600 text-xs px-4 py-3 rounded-lg border border-red-200">
+                        <div className="bg-red-500/10 text-red-400 text-xs px-4 py-3 rounded-lg border border-red-500/20">
                           {submitError}
                         </div>
                       )}
                       
                       <div>
-                        <label className="block text-sm font-medium text-theme-text-light mb-1">Name</label>
+                        <label className="block text-sm font-medium text-white/60 mb-1">Name</label>
                         <input 
                           required
                           type="text" 
                           disabled={isSubmitting}
                           value={formData.name}
                           onChange={e => setFormData(prev => ({...prev, name: e.target.value}))}
-                          className="w-full px-4 py-3 rounded-lg border border-theme-bg-gray bg-white focus:outline-none focus:border-theme-accent focus:ring-1 focus:ring-theme-accent transition-all disabled:opacity-50"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:border-theme-accent focus:ring-1 focus:ring-theme-accent transition-all disabled:opacity-50 placeholder-white/40"
                           placeholder="Jane Doe"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-theme-text-light mb-1">Email</label>
+                        <label className="block text-sm font-medium text-white/60 mb-1">Email</label>
                         <input 
                           required
                           type="email" 
                           disabled={isSubmitting}
                           value={formData.email}
                           onChange={e => setFormData(prev => ({...prev, email: e.target.value}))}
-                          className="w-full px-4 py-3 rounded-lg border border-theme-bg-gray bg-white focus:outline-none focus:border-theme-accent focus:ring-1 focus:ring-theme-accent transition-all disabled:opacity-50"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:border-theme-accent focus:ring-1 focus:ring-theme-accent transition-all disabled:opacity-50 placeholder-white/40"
                           placeholder="jane@example.com"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-theme-text-light mb-1">Phone Number (Optional)</label>
+                        <label className="block text-sm font-medium text-white/60 mb-1">Phone Number (Optional)</label>
                         <input 
                           type="tel" 
                           disabled={isSubmitting}
                           value={formData.phone}
                           onChange={e => setFormData(prev => ({...prev, phone: e.target.value}))}
-                          className="w-full px-4 py-3 rounded-lg border border-theme-bg-gray bg-white focus:outline-none focus:border-theme-accent focus:ring-1 focus:ring-theme-accent transition-all disabled:opacity-50"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:border-theme-accent focus:ring-1 focus:ring-theme-accent transition-all disabled:opacity-50 placeholder-white/40"
                           placeholder="07123 456789"
                         />
                       </div>
@@ -374,14 +374,14 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
                     transition={{ type: "spring", bounce: 0.5 }}
                     className="absolute inset-0 p-8 flex flex-col items-center justify-center text-center"
                   >
-                    <div className="w-20 h-20 bg-theme-accent/10 text-theme-accent rounded-full flex items-center justify-center mb-6">
+                    <div className="w-20 h-20 bg-theme-accent/20 text-theme-accent rounded-full flex items-center justify-center mb-6">
                       <CheckCircle2 className="w-10 h-10" />
                     </div>
-                    <h3 className="text-3xl font-serif text-theme-text-dark mb-4">Request Sent!</h3>
-                    <p className="text-theme-text-light mb-8 max-w-sm">
+                    <h3 className="text-3xl font-serif text-white mb-4">Request Sent!</h3>
+                    <p className="text-white/60 mb-8 max-w-sm">
                       Thank you for your interest, {formData.name || 'there'}. We'll review your details and send a tailored proposal to your email within 24 hours.
                     </p>
-                    <button onClick={onClose} className="px-8 py-3 bg-theme-bg-gray text-theme-text-dark rounded-full font-medium hover:bg-theme-bg-alt transition-colors">
+                    <button onClick={onClose} className="px-8 py-3 bg-white/10 text-white rounded-full font-medium hover:bg-white/20 transition-colors">
                       Close Window
                     </button>
                   </motion.div>
@@ -392,7 +392,7 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
             
             {/* Progress indicator */}
             {step < 6 && (
-              <div className="h-1.5 w-full bg-theme-bg-gray absolute bottom-0 left-0">
+              <div className="h-1.5 w-full bg-white/5 absolute bottom-0 left-0">
                 <motion.div 
                   className="h-full bg-theme-accent"
                   initial={{ width: '20%' }}

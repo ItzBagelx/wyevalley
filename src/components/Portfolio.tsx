@@ -11,7 +11,7 @@ const portfolioItems = [
   },
   {
     title: "Lumina Energy",
-    description: "A bold, conversion-focused site built for an energy company offering solar panels, micro hydro systems, and battery storage. Guides visitors from interest to instant quote in seconds.",
+    description: "A bold, conversion-focused site built for an energy company offering solar panels, micro hydro systems, and battery storage. Guides visitors from interest to instant quote in seconds. A great example of a modern, effective trade site.",
     image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=800&auto=format&fit=crop",
     reverse: true,
     link: "https://showcase2.wyedesign.co.uk"
