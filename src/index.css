@@ -27,27 +27,3 @@
   }
 }
 
-@keyframes spark-travel {
-  0%   { offset-distance: 0%; }
-  100% { offset-distance: 100%; }
-}
-
-.btn-shimmer {
-  position: relative;
-  isolation: isolate;
-}
-
-.btn-shimmer::before {
-  content: '';
-  position: absolute;
-  width: 40px;
-  height: 1.5px;
-  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.95));
-  border-radius: 0 2px 2px 0;
-  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.35);
-  offset-path: border-box;
-  offset-distance: 0%;
-  offset-rotate: auto;
-  animation: spark-travel 5s linear infinite;
-  pointer-events: none;
-}

@@ -125,7 +125,7 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative w-full max-w-lg bg-theme-bg-light rounded-3xl shadow-2xl overflow-hidden border border-white/50"
+            className="relative w-full max-w-lg bg-theme-bg-light rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-white/50 flex flex-col max-h-[95dvh]"
           >
             {/* Header */}
             <div className="flex justify-between items-center p-6 border-b border-theme-bg-gray">
@@ -147,7 +147,7 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
             </div>
 
             {/* Content Area with absolute positioning for slide transitions */}
-            <div className="relative h-[420px] overflow-hidden bg-theme-bg-light">
+            <div className="relative flex-1 h-[70dvh] min-h-[350px] sm:h-[420px] sm:min-h-0 overflow-hidden bg-theme-bg-light">
               <AnimatePresence mode="wait">
                 
                 {/* Step 1: Industry */}
@@ -245,7 +245,7 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -40 }}
                     transition={{ duration: 0.3 }}
-                    className="absolute inset-0 p-6 sm:p-8 flex flex-col h-full"
+                    className="absolute inset-0 p-6 sm:p-8 flex flex-col h-full overflow-y-auto"
                   >
                     <h3 className="text-2xl font-serif text-theme-text-dark mb-4">Anything else you'd like us to know?</h3>
                     <div className="flex flex-col gap-4 flex-1">

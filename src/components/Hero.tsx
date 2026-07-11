@@ -27,16 +27,10 @@ export default function Hero({ openModal }: HeroProps) {
               whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-              className="btn-shimmer w-full sm:w-auto px-8 py-4 bg-theme-accent text-white rounded-full text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 group shadow-lg shadow-theme-accent/20 hover:shadow-xl hover:shadow-theme-accent/30 transition-shadow"
+              className="w-full sm:w-auto px-8 py-4 bg-theme-accent text-white rounded-full text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 group shadow-lg shadow-theme-accent/20 hover:shadow-xl hover:shadow-theme-accent/30 transition-shadow"
             >
               View our work
-              <motion.span
-                className="inline-flex"
-                animate={{ x: [0, 4, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <ArrowRight className="w-4 h-4" />
-              </motion.span>
+              <ArrowRight className="w-4 h-4" />
             </motion.button>
             <motion.button
               onClick={openModal}
