@@ -84,6 +84,15 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
     setIsSubmitting(true);
     setSubmitError(null);
 
+    // Mock form submission during local development to avoid API errors
+    if (import.meta.env.DEV) {
+      console.log("Local Dev Mode: Mocking form submission", formData);
+      await new Promise(resolve => setTimeout(resolve, 1200)); // Simulate network latency
+      setStep(6);
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       const response = await fetch("/api/submit", {
         method: "POST",
@@ -98,8 +107,7 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
       try {
         result = JSON.parse(text);
       } catch (e) {
-        // This usually happens during local development if the Worker isn't running
-        throw new Error("Server returned an invalid response. If testing locally, ensure you are running 'wrangler pages dev'.");
+        throw new Error(`Server returned an invalid response (Status: ${response.status}). If testing locally, ensure you are running 'wrangler pages dev'.`);
       }
 
       if (!response.ok) {
