@@ -17,10 +17,11 @@ const portfolioItems = [
     link: "https://showcase2.wyedesign.co.uk"
   },
   {
-    title: "The Boutique Salon Booking",
-    description: "An elegant, airy aesthetic tailored for hair salons and spas. Focuses on stylist profiles, service menus, and frictionless online booking integrations.",
-    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop",
-    reverse: false
+    title: "ClearView Window Cleaning",
+    description: "A clean, trustworthy design for a local window cleaning business. Features easy quote requests, service areas, and customer testimonials to build local authority.",
+    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop",
+    reverse: false,
+    link: "https://showcase3.wyedesign.co.uk"
   }
 ];
 
