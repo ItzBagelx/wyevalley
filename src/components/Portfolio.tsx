@@ -5,21 +5,21 @@ const portfolioItems = [
   {
     title: "The Modern Restaurant Experience",
     description: "A visual-first design crafted for cafes and restaurants. Features a mobile-perfect, readable menu and seamless integration with your table booking system.",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/images/portfolio-1.webp",
     reverse: false,
     link: "https://showcase1.wyedesign.co.uk"
   },
   {
     title: "Lumina Energy",
     description: "A bold, conversion-focused site built for an energy company offering solar panels, micro hydro systems, and battery storage. Guides visitors from interest to instant quote in seconds. A great example of a modern, effective trade site.",
-    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/images/portfolio-2.webp",
     reverse: true,
     link: "https://showcase2.wyedesign.co.uk"
   },
   {
     title: "ClearView Window Cleaning",
     description: "A clean, trustworthy design for a local window cleaning business. Features easy quote requests, service areas, and customer testimonials to build local authority.",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/images/portfolio-3.webp",
     reverse: false,
     link: "https://showcase3.wyedesign.co.uk"
   }
