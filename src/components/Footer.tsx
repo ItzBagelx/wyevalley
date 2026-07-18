@@ -15,7 +15,7 @@ export default function Footer({ openModal }: FooterProps) {
             Stop losing customers from a poor digital presence. Partner with us for a premium, hassle-free digital presence that will actually give results.
           </p>
           <div className="space-y-2 text-theme-text-light font-normal text-sm">
-             <p>wyevalleydesign@gmail.com</p>
+             <p>hello@wyedesign.co.uk</p>
              <p>Hereford, UK</p>
           </div>
         </div>
