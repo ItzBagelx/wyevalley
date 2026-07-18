@@ -7,7 +7,7 @@ type PricingProps = {
 
 export default function Pricing({ openModal }: PricingProps) {
   return (
-    <section className="py-24 px-6 bg-theme-bg-light">
+    <section id="pricing" className="py-24 px-6 bg-theme-bg-light scroll-mt-12">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif italic text-theme-text-dark mb-4">Simple, honest pricing.</h2>
@@ -39,7 +39,7 @@ export default function Pricing({ openModal }: PricingProps) {
               </p>
               
               <div className="flex items-baseline gap-2 mb-6 border-b border-theme-bg-gray/30 pb-6">
-                <span className="text-5xl font-serif italic text-theme-text-dark">£40</span>
+                <span className="text-5xl font-serif italic text-theme-text-dark">£30</span>
                 <span className="text-theme-text-light font-normal">/ month</span>
               </div>
               

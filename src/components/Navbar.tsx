@@ -18,9 +18,9 @@ export default function Navbar({ openModal }: NavbarProps) {
         </div>
         
         <div className="hidden md:flex items-center gap-8">
-          <a href="#" className="text-xs font-medium uppercase tracking-widest opacity-70 hover:opacity-100 transition-opacity text-theme-text">Services</a>
-          <a href="#" className="text-xs font-medium uppercase tracking-widest opacity-70 hover:opacity-100 transition-opacity text-theme-text">Work</a>
-          <a href="#" className="text-xs font-medium uppercase tracking-widest opacity-70 hover:opacity-100 transition-opacity text-theme-text">Pricing</a>
+          <a href="#services" className="text-xs font-medium uppercase tracking-widest opacity-70 hover:opacity-100 transition-opacity text-theme-text">Services</a>
+          <a href="#portfolio" className="text-xs font-medium uppercase tracking-widest opacity-70 hover:opacity-100 transition-opacity text-theme-text">Work</a>
+          <a href="#pricing" className="text-xs font-medium uppercase tracking-widest opacity-70 hover:opacity-100 transition-opacity text-theme-text">Pricing</a>
         </div>
 
         <motion.button
