@@ -122,8 +122,6 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
     }
   };
 
-  if (!isOpen) return null;
-
   return (
     <AnimatePresence>
       {isOpen && (
@@ -163,7 +161,7 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
 
             {/* Content Area with absolute positioning for slide transitions */}
             <div className="relative flex-1 h-[70dvh] min-h-[350px] sm:h-[500px] sm:min-h-0 overflow-hidden bg-theme-text-dark">
-              <AnimatePresence mode="wait">
+              <AnimatePresence mode="wait" initial={false}>
                 
                 {/* Step 1: Industry */}
                 {step === 1 && (
