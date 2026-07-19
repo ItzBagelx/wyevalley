@@ -19,7 +19,7 @@ const portfolioItems = [
   {
     title: "ClearView Window Cleaning",
     description: "A clean, trustworthy design for a local window cleaning business. Features easy quote requests, service areas, and customer testimonials to build local authority.",
-    image: "/assets/images/portfolio-3.webp",
+    image: "/assets/images/portfolio-3.jpg",
     reverse: false,
     link: "https://showcase3.wyedesign.co.uk"
   }
