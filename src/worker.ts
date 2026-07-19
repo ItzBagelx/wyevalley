@@ -101,7 +101,7 @@ export default {
           },
           body: JSON.stringify({
             from: "Wye Design Leads <onboarding@resend.dev>",
-            to: "wyevalleydesign@gmail.com",
+            to: "hello@wyedesign.co.uk",
             subject: `✨ New Lead: ${data.name} (${data.industry})`,
             html: htmlBody,
             reply_to: data.email
