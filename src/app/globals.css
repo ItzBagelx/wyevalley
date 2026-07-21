@@ -25,5 +25,24 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif text-theme-text-dark;
   }
-}
 
+  a, button, input, select, textarea, summary {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-accent focus-visible:ring-offset-2 focus-visible:ring-offset-theme-bg;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .prose h2 {
+    @apply mt-12 text-3xl;
+  }
+
+  .prose p {
+    @apply mt-4 leading-relaxed;
+  }
+
+  .prose a {
+    @apply text-theme-accent underline underline-offset-4;
+  }
+}

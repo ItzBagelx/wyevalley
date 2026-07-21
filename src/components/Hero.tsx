@@ -1,49 +1,37 @@
-import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
-type HeroProps = {
-  openModal: () => void;
-};
-
-export default function Hero({ openModal }: HeroProps) {
+export default function Hero() {
   return (
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden px-6">
       <div className="max-w-7xl mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-4xl mx-auto"
-        >
+        <div className="max-w-4xl mx-auto">
+          <p className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-theme-accent">
+            Hereford &amp; Herefordshire
+          </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-theme-text-dark leading-[1.1] mb-8">
-            Premium websites for local businesses
+            Web design for Hereford trades and small businesses
           </h1>
           <p className="text-lg md:text-xl text-theme-text-light mb-10 max-w-2xl mx-auto leading-relaxed">
-            We design, host and manage a high end digital space for your company, so you can focus on what matters most. All done stress free.
+            Custom websites, hosting and maintenance — all handled for you.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <motion.a
-              href="#portfolio"
-              whileHover={{ scale: 1.04, y: -2 }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+            <Link
+              href="/contact#proposal"
               className="w-full sm:w-auto px-8 py-4 bg-theme-accent text-white rounded-full text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 group shadow-lg shadow-theme-accent/20 hover:shadow-xl hover:shadow-theme-accent/30 transition-shadow"
             >
-              View our work
+              Get a proposal
               <ArrowRight className="w-4 h-4" />
-            </motion.a>
-            <motion.button
-              onClick={openModal}
-              whileHover={{ scale: 1.04, y: -2 }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+            </Link>
+            <Link
+              href="#services"
               className="w-full sm:w-auto px-8 py-4 bg-transparent border border-theme-text text-theme-text rounded-full text-sm font-bold uppercase tracking-wider hover:bg-theme-bg-alt transition-all"
             >
-              Get a quote
-            </motion.button>
+              How it works
+            </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

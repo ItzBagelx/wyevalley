@@ -1,24 +1,23 @@
-import { motion } from 'motion/react';
 import { PenTool, Server, RefreshCw } from 'lucide-react';
 
 const steps = [
   {
     number: "01",
     icon: PenTool,
-    title: "Premium Custom Design",
-    description: "We come to you, the owner, and custom build a modern website tailored to your brand and your needs"
+    title: "Plan around your customers",
+    description: "We shape the pages, calls to action and content around what customers need to know before they contact you."
   },
   {
     number: "02",
     icon: Server,
-    title: "Enterprise hosting and security",
-    description: "Your site is hosted on our world-class infrastructure. It stays lightning-fast, secure, and online 24/7."
+    title: "Build and launch",
+    description: "Your site is custom built, set up with the essentials and launched with a clear place for customers to enquire."
   },
   {
     number: "03",
     icon: RefreshCw,
-    title: "Unlimited Updates",
-    description: "Changed your menu? Hired a new team member? Just contact us, and we update your website to your needs. As many times as you like, no extra cost."
+    title: "Keep it useful",
+    description: "Hosting, maintenance and the agreed update process are managed after launch, so your information can stay current."
   }
 ];
 
@@ -27,20 +26,16 @@ export default function ManagedModel() {
     <section className="py-24 px-6 bg-theme-bg border-y border-theme-bg-gray text-theme-text">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-20">
-          <h2 className="text-4xl md:text-5xl font-serif italic mb-6 text-theme-text-dark">All in one place</h2>
+          <h2 className="text-4xl md:text-5xl font-serif italic mb-6 text-theme-text-dark">A straightforward route from idea to launch</h2>
           <p className="text-xl text-theme-text-light font-normal leading-relaxed">
-            We know how stressful it is running a company, let alone a website as well. We manage all things digital to let you focus on what matters most to your business.
+            A well-structured website is a business tool, not a project you have to keep rebuilding. We keep the process focused and practical.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-12">
           {steps.map((step, index) => (
-            <motion.div 
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
               className="relative"
             >
               <div className="text-8xl font-serif italic text-theme-text-dark/5 absolute -top-12 -left-6 -z-10 select-none">
@@ -55,7 +50,7 @@ export default function ManagedModel() {
                   {step.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

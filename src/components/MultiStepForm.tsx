@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ArrowRight, CheckCircle2, ChevronLeft } from 'lucide-react';
@@ -86,7 +88,7 @@ export default function MultiStepForm({ isOpen, onClose }: MultiStepFormProps) {
     setSubmitError(null);
 
     // Mock form submission during local development to avoid API errors
-    if (import.meta.env.DEV) {
+    if (process.env.NODE_ENV !== 'production') {
       console.log("Local Dev Mode: Mocking form submission", formData);
       await new Promise(resolve => setTimeout(resolve, 1200));
       setStep(6);

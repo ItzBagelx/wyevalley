@@ -1,19 +1,59 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Wye Design
 
-# Run and deploy your AI Studio app
+The Wye Design website is a Next.js app deployed as a Cloudflare Worker with the OpenNext adapter. The contact form sends enquiries through Resend from the server-side `/api/submit` route.
 
-This contains everything you need to run your app locally.
-https://ai.studio/apps/87f4bbe2-1d43-4351-b47a-c4ef61daf081
+## Local development
 
-## Run Locally
+Prerequisites: Node.js 20.9 or later and npm.
 
-**Prerequisites:**  Node.js
+```bash
+npm install
+cp .env.example .env.local
+npm run dev
+```
 
+Add a Resend API key to `.env.local` to test form delivery locally. Never commit that file.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## First Cloudflare deployment
+
+1. Log in to Cloudflare:
+
+   ```bash
+   npx wrangler login
+   ```
+
+2. Store the Resend key as an encrypted Worker secret:
+
+   ```bash
+   npx wrangler secret put RESEND_API_KEY
+   ```
+
+3. Create the production Worker and deploy it:
+
+   ```bash
+   npm run deploy
+   ```
+
+4. In the Cloudflare dashboard, open **Workers & Pages > wyevalley > Settings > Domains & Routes** and attach `wyedesign.co.uk` (and `www` if required).
+
+5. In Resend, verify `wyedesign.co.uk`. The app sends from `Wye Design Leads <leads@wyedesign.co.uk>` and delivers enquiries to `hello@wyedesign.co.uk`.
+
+## GitHub deployment flow
+
+Push changes to GitHub as usual. To have Cloudflare deploy every push automatically, create a Cloudflare Workers build integration for this repository and use:
+
+| Setting | Value |
+| --- | --- |
+| Build command | `npx @opennextjs/cloudflare build` |
+| Deploy command | `npx @opennextjs/cloudflare deploy` |
+| Production branch | `main` |
+
+Keep `RESEND_API_KEY` configured as a Worker secret in Cloudflare; do not add it to the repository or build settings. Alternatively, deploy manually after each push with `npm run deploy`.
+
+## Production preview
+
+Build and run the Worker locally:
+
+```bash
+npm run preview
+```

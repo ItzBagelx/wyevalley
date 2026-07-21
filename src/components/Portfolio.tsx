@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 
 const portfolioItems = [
@@ -31,8 +30,8 @@ export default function Portfolio() {
       <div className="max-w-7xl mx-auto">
         <div className="mb-20 text-center">
           <h2 className="text-4xl md:text-5xl font-serif italic mb-6 text-theme-text-dark">Our Work</h2>
-          <p className="text-lg text-theme-text-light font-normal max-w-2xl mx-auto mb-2">Premium digital spaces engineered for performance and conversion</p>
-          <p className="text-sm text-theme-text-light/70 italic max-w-2xl mx-auto">* Note: The websites featured below are concept projects showcasing our design capabilities.</p>
+          <p className="text-lg text-theme-text-light font-normal max-w-2xl mx-auto mb-2">A few directions showing how clear structure and strong visual hierarchy can work for local businesses.</p>
+          <p className="text-sm text-theme-text-light/70 italic max-w-2xl mx-auto">These are concept projects that demonstrate design capabilities, not commissioned client sites.</p>
         </div>
 
         <div className="space-y-32">
@@ -40,11 +39,7 @@ export default function Portfolio() {
             <div key={index} className={`flex flex-col ${item.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-24`}>
               
               {/* Image side */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
+              <div
                 className="w-full lg:w-1/2 relative group"
               >
                 <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-theme-bg-alt relative shadow-2xl border border-white/50 p-4 pb-0">
@@ -58,26 +53,22 @@ export default function Portfolio() {
                     />
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Text side */}
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+              <div
                 className="w-full lg:w-1/2 flex flex-col justify-center"
               >
                 <div className="inline-block px-3 py-1 bg-theme-text-dark text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-6 w-max">
-                  Case Study {index + 1}
+                  Concept example {index + 1}
                 </div>
                 <h3 className="text-3xl md:text-4xl font-serif italic mb-6 text-theme-text-dark">{item.title}</h3>
                 <p className="text-lg text-theme-text-light font-normal leading-relaxed mb-10">
                   {item.description}
                 </p>
                 {item.link ? (
-                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 text-theme-accent text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity w-max pb-1 border-b border-theme-accent">
-                    View Live Example
+                  <a href={item.link} target="_blank" rel="nofollow noopener noreferrer" className="group flex items-center gap-2 text-theme-accent text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity w-max pb-1 border-b border-theme-accent">
+                    Open concept example
                     <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </a>
                 ) : (
@@ -86,7 +77,7 @@ export default function Portfolio() {
                     <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </button>
                 )}
-              </motion.div>
+              </div>
 
             </div>
           ))}
