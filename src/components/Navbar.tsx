@@ -34,17 +34,17 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed inset-x-0 top-0 z-50 border-b border-theme-text/10 bg-theme-nav/95 px-4 py-3.5 shadow-[0_8px_30px_rgba(45,45,45,0.06)] backdrop-blur-md sm:px-6 md:border-transparent md:px-6 md:py-5 md:shadow-none">
-        <div className="mx-auto flex max-w-7xl items-center justify-between">
+        <div className="mx-auto flex max-w-7xl items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr]">
           <Link
             href="/"
-            className="group flex min-w-0 flex-col leading-none"
+            className="group flex min-w-0 flex-col leading-none md:justify-self-start"
           >
             <span className="font-serif text-[1.35rem] font-semibold tracking-tight text-theme-text-dark md:text-xl">
               Wye Design
             </span>
           </Link>
 
-          <div className="hidden items-center gap-7 md:flex">
+          <div className="hidden items-center gap-7 md:flex md:justify-self-center">
             {primaryNavigation.map((item) => (
               <Link
                 key={item.href}
@@ -58,7 +58,7 @@ export default function Navbar() {
 
           <Link
             href="/contact"
-            className="hidden items-center gap-2 rounded-full bg-theme-accent px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-transform hover:-translate-y-0.5 md:inline-flex"
+            className="hidden items-center gap-2 rounded-full bg-theme-accent px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-transform hover:-translate-y-0.5 md:inline-flex md:justify-self-end"
           >
             Request a proposal <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
           </Link>
