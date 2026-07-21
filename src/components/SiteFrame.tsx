@@ -4,14 +4,15 @@ import Navbar from "./Navbar";
 
 type SiteFrameProps = {
   children: ReactNode;
+  showFooterProposalCta?: boolean;
 };
 
-export default function SiteFrame({ children }: SiteFrameProps) {
+export default function SiteFrame({ children, showFooterProposalCta = true }: SiteFrameProps) {
   return (
     <div className="min-h-screen font-sans">
       <Navbar />
       <main>{children}</main>
-      <Footer />
+      <Footer showProposalCta={showFooterProposalCta} />
     </div>
   );
 }

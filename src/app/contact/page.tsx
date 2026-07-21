@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata(
 
 export default function ContactPage() {
   return (
-    <SiteFrame>
+    <SiteFrame showFooterProposalCta={false}>
       <PageHero
         eyebrow="Request a proposal"
         title="Tell us what your website needs to do"
