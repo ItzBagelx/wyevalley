@@ -154,7 +154,7 @@ export async function POST(request: Request) {
         "User-Agent": "Wye-Design-Website/1.0"
       },
       body: JSON.stringify({
-        from: "Wye Design Leads <leads@wyedesign.co.uk>",
+        from: "Wye Design <hello@wyedesign.co.uk>",
         to: "hello@wyedesign.co.uk",
         subject: `New website lead: ${data.name} (${data.business})`,
         html: htmlBody,
