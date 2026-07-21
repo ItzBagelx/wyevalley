@@ -12,6 +12,7 @@ export const primaryNavigation = [
   { href: "/websites-for-trades", label: "For trades" },
   { href: "/pricing", label: "Pricing" },
   { href: "/work", label: "Work" },
+  { href: "/about", label: "About" },
 ] as const;
 
 export function absoluteUrl(path = "/") {

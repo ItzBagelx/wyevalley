@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: ["/favicon.svg"],
+  },
   alternates: {
     canonical: "/",
   },
@@ -65,19 +69,21 @@ export default function RootLayout({
             "@context": "https://schema.org",
             "@graph": [
               {
-              "@type": "Organization",
-              "@id": `${absoluteUrl("/#organization")}`,
-              name: siteConfig.name,
-              url: siteConfig.url,
-              email: siteConfig.email,
-              areaServed: ["Hereford", "Herefordshire"],
-              description: siteConfig.description,
+                "@type": "Organization",
+                "@id": absoluteUrl("/#organization"),
+                name: siteConfig.name,
+                url: siteConfig.url,
+                logo: absoluteUrl("/favicon.svg"),
+                email: siteConfig.email,
+                areaServed: ["Hereford", "Herefordshire"],
+                description: siteConfig.description,
               },
               {
                 "@type": "WebSite",
-                "@id": `${absoluteUrl("/#website")}`,
+                "@id": absoluteUrl("/#website"),
                 name: siteConfig.name,
                 url: siteConfig.url,
+                publisher: { "@id": absoluteUrl("/#organization") },
               },
             ],
           }}

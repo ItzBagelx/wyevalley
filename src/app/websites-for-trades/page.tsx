@@ -14,8 +14,8 @@ export default function WebsitesForTradesPage() {
       serviceName="Websites for tradespeople"
       path="/websites-for-trades"
       eyebrow="Websites for tradespeople"
-      title="Make it simple for customers to understand your trade and request a quote"
-      intro="A trade website needs to do more than look polished. It needs to make your services, service areas, recent work and enquiry options clear when someone is deciding who to contact."
+      title="Websites for tradespeople that turn visits into quote enquiries"
+      intro="A website for a trade business needs to do more than look polished. It needs to make your services, service areas, recent work and quote route clear when someone is deciding who to contact."
       focusTitle="A trade website should do the practical work first"
       focusIntro="Customers often arrive with a specific job in mind and limited time. The page structure should make your relevance and next step obvious on a phone as well as a desktop."
       points={[

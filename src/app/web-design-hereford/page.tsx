@@ -14,8 +14,8 @@ export default function WebDesignHerefordPage() {
       serviceName="Web design in Hereford"
       path="/web-design-hereford"
       eyebrow="Web design in Hereford"
-      title="A clearer website for the business you are building"
-      intro="Wye Design creates custom websites for businesses in Hereford and Herefordshire that need to explain their services well, earn confidence and turn visits into useful enquiries."
+      title="Web design in Hereford for trades and small businesses"
+      intro="Wye Design creates custom websites for Hereford and Herefordshire businesses that need to explain their services clearly, earn confidence and turn visits into useful enquiries."
       focusTitle="Designed around how local customers make a decision"
       focusIntro="A good local-business website should answer the practical questions early: what you do, who you help, where you work and how to get in touch."
       points={[

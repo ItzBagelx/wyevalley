@@ -61,9 +61,7 @@ export default function ServicePage({
           name: serviceName,
           serviceType: serviceName,
           provider: {
-            "@type": "Organization",
-            name: siteConfig.name,
-            url: siteConfig.url,
+            "@id": absoluteUrl("/#organization"),
           },
           areaServed: ["Hereford", "Herefordshire"],
           url: absoluteUrl(path),

@@ -13,7 +13,7 @@ export default function Hero() {
             Web design for Hereford trades and small businesses
           </h1>
           <p className="text-lg md:text-xl text-theme-text-light mb-10 max-w-2xl mx-auto leading-relaxed">
-            Custom websites, hosting and maintenance — all handled for you.
+            We provide web design for Hereford trades and small businesses, with custom websites, hosting and maintenance all handled for you.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

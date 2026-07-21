@@ -15,6 +15,7 @@ export default function Footer() {
           <div className="space-y-2 text-theme-text-light font-normal text-sm">
              <p><EmailLink className="underline underline-offset-4 hover:text-theme-accent">hello@wyedesign.co.uk</EmailLink></p>
              <p>Serving Hereford &amp; Herefordshire</p>
+             <p><Link href="/about" className="underline underline-offset-4 hover:text-theme-accent">About Wye Design</Link></p>
           </div>
         </div>
 
