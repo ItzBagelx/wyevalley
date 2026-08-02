@@ -6,19 +6,21 @@ import { pageMetadata } from "../../lib/site";
 
 export const metadata: Metadata = pageMetadata(
   "Website Design Pricing",
-  "Transparent website design pricing for trades and small businesses: a £30/month managed option or £400 fixed-price build with a £15/month service.",
+  "Transparent website design pricing for trades and small businesses: £30/month with nothing upfront or £495 upfront, followed by a £15/month service.",
   "/pricing",
 );
 
 const comparisons = [
-  ["Starting price", "£30 per month", "£400 upfront"],
-  ["Setup fee", "£0", "Included in the upfront build"],
+  ["Starting price", "£30 per month", "£495 upfront"],
+  ["Upfront payment", "£0", "£495"],
+  ["Minimum term", "24 months", "Confirmed in your proposal"],
+  ["Ongoing service", "£15 per month after month 24", "£15 per month from launch"],
   ["Website size", "Custom 3–5 page website", "Custom 3–5 page website"],
   ["Hosting and domain", "Included", "Covered by the monthly service"],
   ["SSL", "Included", "Included"],
-  ["Maintenance", "Included", "£15 per month service"],
+  ["Maintenance", "Included throughout", "Included in the £15 per month service"],
   ["Updates", "Agreed updates and maintenance", "Agreed ongoing support service"],
-  ["Ownership", "Confirmed in your proposal", "Full site ownership"],
+  ["Ownership", "Full ownership after month 24", "Full ownership from launch"],
   ["Project scope", "Confirmed before work begins", "Confirmed before work begins"],
 ];
 
@@ -50,8 +52,8 @@ export default function PricingPage() {
               <p className="mt-2 text-sm leading-relaxed text-theme-text-light">A fully managed, predictable monthly route.</p>
             </div>
             <div className="border-t border-theme-bg-gray p-6 md:border-l md:border-t-0 md:p-8">
-              <h2 className="text-2xl">Fixed price</h2>
-              <p className="mt-2 text-sm leading-relaxed text-theme-text-light">A larger upfront build with an ongoing monthly service.</p>
+              <h2 className="text-2xl">Pay upfront</h2>
+              <p className="mt-2 text-sm leading-relaxed text-theme-text-light">Pay for the website upfront, followed by the ongoing monthly service.</p>
             </div>
           </div>
 
@@ -73,14 +75,14 @@ export default function PricingPage() {
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-theme-accent">Pay monthly</p>
             <h2 className="mt-4 text-4xl">£30 <span className="text-lg text-theme-text-light">per month</span></h2>
             <p className="mt-5 leading-relaxed text-theme-text-light">
-              This option starts with no upfront setup fee and includes a custom website, hosting, domain, SSL, maintenance and the agreed update process.
+              This option starts with nothing upfront and includes a custom website, hosting, domain, SSL and maintenance. After 24 months, you own the website and the price drops to £15 per month.
             </p>
           </div>
           <div className="rounded-3xl bg-theme-text-dark p-8 text-white shadow-lg">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-theme-bg">Fixed price</p>
-            <h2 className="mt-4 text-4xl text-white">£400 <span className="text-lg text-white/70">upfront</span></h2>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-theme-bg">Pay upfront</p>
+            <h2 className="mt-4 text-4xl text-white">£495 <span className="text-lg text-white/70">upfront</span></h2>
             <p className="mt-5 leading-relaxed text-white/75">
-              This route starts with a fixed-price website build, followed by a £15/month service to keep the site online, renew the domain and provide security updates.
+              Pay for the website upfront and own it from launch, followed by a £15/month service to keep it online, renew the domain and provide security updates.
             </p>
           </div>
         </div>

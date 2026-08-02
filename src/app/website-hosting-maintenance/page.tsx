@@ -49,11 +49,11 @@ export default function HostingMaintenancePage() {
       questions={[
         {
           question: "What does the monthly website option include?",
-          answer: "The current £30/month starting option includes a custom 3–5 page website, hosting, domain, SSL setup and ongoing maintenance with agreed updates. The proposal confirms the detailed scope.",
+          answer: "The £30/month option starts with nothing upfront and includes a custom 3–5 page website, hosting, domain, SSL setup and ongoing maintenance. After 24 months, you own the website and the ongoing service drops to £15/month. The proposal confirms the detailed scope.",
         },
         {
-          question: "What happens with the fixed-price option?",
-          answer: "The website build starts at £400, followed by a £15/month service for keeping the site online, domain renewal and security updates. Full details are confirmed in the proposal.",
+          question: "What happens with the pay-upfront option?",
+          answer: "The website build costs £495 upfront, followed by a £15/month service for keeping the site online, domain renewal and security updates. You own the website from launch, with full details confirmed in the proposal.",
         },
         {
           question: "Can I ask for changes after launch?",

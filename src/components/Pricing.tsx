@@ -14,7 +14,7 @@ export default function Pricing() {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
           
-          {/* Card 1: Pay Monthly */}
+          {/* Card 1: Pay monthly */}
           <div
             className="bg-white border border-theme-bg-gray/50 rounded-3xl p-8 lg:p-10 shadow-xl flex flex-col justify-between relative overflow-hidden"
           >
@@ -25,9 +25,9 @@ export default function Pricing() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-serif italic text-theme-text-dark mb-2">Pay Monthly</h3>
+              <h3 className="text-2xl font-serif italic text-theme-text-dark mb-2">Pay monthly</h3>
               <p className="text-sm text-theme-text-light mb-6 font-normal min-h-[40px]">
-                A managed option for businesses that want one predictable monthly cost.
+                Start with nothing upfront and spread the website cost over 24 months.
               </p>
               
               <div className="flex items-baseline gap-2 mb-6 border-b border-theme-bg-gray/30 pb-6">
@@ -38,7 +38,11 @@ export default function Pricing() {
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-theme-accent shrink-0 mt-0.5" />
-                  <span className="text-theme-text-dark font-normal">£0 Upfront Setup Fee</span>
+                  <span className="text-theme-text-dark font-normal">£0 upfront</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-theme-accent shrink-0 mt-0.5" />
+                  <span className="text-theme-text-dark font-normal">24-month minimum term</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-theme-accent shrink-0 mt-0.5" />
@@ -46,15 +50,11 @@ export default function Pricing() {
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-theme-accent shrink-0 mt-0.5" />
-                  <span className="text-theme-text-dark font-normal">Hosting, domain and SSL setup</span>
+                  <span className="text-theme-text-dark font-normal">Hosting, domain, SSL and maintenance included</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-theme-accent shrink-0 mt-0.5" />
-                  <span className="text-theme-text-dark font-normal">SSL Security Certificate</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-theme-accent shrink-0 mt-0.5" />
-                  <span className="text-theme-text-dark font-normal">Ongoing maintenance and agreed updates</span>
+                  <span className="text-theme-text-dark font-normal">Own the website after month 24, then £15/month</span>
                 </li>
               </ul>
             </div>
@@ -69,18 +69,18 @@ export default function Pricing() {
             </div>
           </div>
 
-          {/* Card 2: Fixed Price */}
+          {/* Card 2: Pay upfront */}
           <div
             className="bg-theme-bg-alt border border-white/50 rounded-3xl p-8 lg:p-10 shadow-xl flex flex-col justify-between relative overflow-hidden"
           >
             <div>
-              <h3 className="text-2xl font-serif italic text-theme-text-dark mb-2">Fixed Price</h3>
+              <h3 className="text-2xl font-serif italic text-theme-text-dark mb-2">Pay upfront</h3>
               <p className="text-sm text-theme-text-light mb-6 font-normal min-h-[40px]">
-                A fixed upfront build, with a separate monthly service for keeping the site online and maintained.
+                Pay for the website upfront, then keep hosting and maintenance in one place.
               </p>
               
               <div className="flex items-baseline gap-2 mb-6 border-b border-theme-bg-gray/30 pb-6">
-                <span className="text-5xl font-serif italic text-theme-text-dark">£400</span>
+                <span className="text-5xl font-serif italic text-theme-text-dark">£495</span>
                 <span className="text-theme-text-light font-normal">upfront</span>
               </div>
               
@@ -95,11 +95,11 @@ export default function Pricing() {
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-theme-accent shrink-0 mt-0.5" />
-                  <span className="text-theme-text-dark font-normal">SSL Security Certificate</span>
+                  <span className="text-theme-text-dark font-normal">Hosting, domain and SSL included</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-theme-accent shrink-0 mt-0.5" />
-                  <span className="text-theme-text-dark font-normal">Full Site Ownership</span>
+                  <span className="text-theme-text-dark font-normal">Full ownership from launch</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-theme-accent shrink-0 mt-0.5" />
@@ -115,7 +115,7 @@ export default function Pricing() {
               >
                 Request a proposal
               </Link>
-              <p className="text-center text-[10px] uppercase tracking-widest text-theme-text-light mt-4 font-bold opacity-75">+ £15/mo Maintenance Retainer</p>
+              <p className="text-center text-[10px] uppercase tracking-widest text-theme-text-light mt-4 font-bold opacity-75">+ £15/month hosting and maintenance</p>
             </div>
           </div>
 
@@ -124,7 +124,7 @@ export default function Pricing() {
         {/* Footnote context */}
         <div className="mt-16 text-center text-xs text-theme-text-light max-w-xl mx-auto leading-relaxed border-t border-theme-bg-gray/50 pt-8">
           <p>
-            <strong>Fixed-price service:</strong> The £15/month service keeps the website online and covers domain renewal and security updates. Your proposal confirms the scope and ongoing arrangements before work begins.
+            <strong>Ongoing service:</strong> After the website has been paid for, the £15/month service keeps it online and covers domain renewal and security updates. Your proposal confirms the scope and ongoing arrangements before work begins.
           </p>
           <Link href="/pricing" className="mt-5 inline-block font-bold text-theme-accent underline underline-offset-4">Compare both options in detail</Link>
         </div>
