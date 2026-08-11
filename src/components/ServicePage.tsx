@@ -57,15 +57,54 @@ export default function ServicePage({
       <StructuredData
         data={{
           "@context": "https://schema.org",
-          "@type": "Service",
-          name: serviceName,
-          serviceType: serviceName,
-          provider: {
-            "@id": absoluteUrl("/#organization"),
-          },
-          areaServed: ["Hereford", "Herefordshire"],
-          url: absoluteUrl(path),
-          description: intro,
+          "@graph": [
+            {
+              "@type": "Service",
+              "@id": absoluteUrl(`${path}#service`),
+              name: serviceName,
+              serviceType: serviceName,
+              provider: {
+                "@id": absoluteUrl("/#organization"),
+              },
+              areaServed: [
+                { "@type": "City", name: "Hereford" },
+                { "@type": "AdministrativeArea", name: "Herefordshire" },
+              ],
+              url: absoluteUrl(path),
+              mainEntityOfPage: absoluteUrl(path),
+              description: intro,
+            },
+            {
+              "@type": "FAQPage",
+              "@id": absoluteUrl(`${path}#faq`),
+              mainEntity: questions.map((item) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: item.answer,
+                },
+              })),
+            },
+            {
+              "@type": "BreadcrumbList",
+              "@id": absoluteUrl(`${path}#breadcrumb`),
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: absoluteUrl("/"),
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: serviceName,
+                  item: absoluteUrl(path),
+                },
+              ],
+            },
+          ],
         }}
       />
       <PageHero eyebrow={eyebrow} title={title} intro={intro}>

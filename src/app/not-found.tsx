@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import SiteFrame from "../components/SiteFrame";
+
+export const metadata: Metadata = {
+  title: "Page not found",
+  description: "The requested page could not be found on the Wye Design website.",
+  alternates: {
+    canonical: null,
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function NotFound() {
   return (

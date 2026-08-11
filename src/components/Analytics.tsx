@@ -29,6 +29,31 @@ export default function Analytics() {
     }
   }, []);
 
+  useEffect(() => {
+    const trackConversionClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+
+      const link = target.closest("a");
+      if (!(link instanceof HTMLAnchorElement)) return;
+
+      const url = new URL(link.href, window.location.href);
+      const location = `${window.location.pathname}${window.location.hash}`;
+
+      if (url.protocol === "mailto:") {
+        trackEvent("contact_email_click", { location });
+      } else if (url.origin === window.location.origin && url.pathname === "/contact") {
+        trackEvent("contact_cta_click", {
+          location,
+          destination: `${url.pathname}${url.hash}`,
+        });
+      }
+    };
+
+    document.addEventListener("click", trackConversionClick);
+    return () => document.removeEventListener("click", trackConversionClick);
+  }, []);
+
   if (!measurementId) {
     return null;
   }

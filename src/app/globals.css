@@ -45,4 +45,8 @@
   .prose a {
     @apply text-theme-accent underline underline-offset-4;
   }
+
+  #proposal {
+    scroll-margin-top: 7rem;
+  }
 }

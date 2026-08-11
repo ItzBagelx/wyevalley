@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: "/og.png",
-        width: 1672,
-        height: 941,
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
         alt: "Wye Design — Custom web design for Hereford businesses",
       },
     ],
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Web Design Hereford for Trades & Small Businesses | Wye Design",
     description: siteConfig.description,
-    images: ["/og.png"],
+    images: ["/og.jpg"],
   },
   verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
     ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
@@ -74,8 +74,25 @@ export default function RootLayout({
                 name: siteConfig.name,
                 url: siteConfig.url,
                 logo: absoluteUrl("/favicon.svg"),
+                image: absoluteUrl("/og.jpg"),
                 email: siteConfig.email,
-                areaServed: ["Hereford", "Herefordshire"],
+                contactPoint: {
+                  "@type": "ContactPoint",
+                  contactType: "sales",
+                  email: siteConfig.email,
+                  areaServed: "GB",
+                  availableLanguage: "English",
+                },
+                areaServed: [
+                  { "@type": "City", name: "Hereford" },
+                  { "@type": "AdministrativeArea", name: "Herefordshire" },
+                ],
+                knowsAbout: [
+                  "Web design",
+                  "Small business websites",
+                  "Trade business websites",
+                  "Website hosting and maintenance",
+                ],
                 description: siteConfig.description,
               },
               {
@@ -84,6 +101,7 @@ export default function RootLayout({
                 name: siteConfig.name,
                 url: siteConfig.url,
                 publisher: { "@id": absoluteUrl("/#organization") },
+                inLanguage: "en-GB",
               },
             ],
           }}

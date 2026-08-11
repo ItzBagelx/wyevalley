@@ -5,6 +5,7 @@ const portfolioItems = [
     title: "The Modern Restaurant Experience",
     description: "A visual-first design crafted for cafes and restaurants. Features a mobile-perfect, readable menu and seamless integration with your table booking system.",
     image: "/assets/images/portfolio-1.webp",
+    imageSmall: "/assets/images/portfolio-1-400.webp",
     reverse: false,
     link: "https://showcase1.wyedesign.co.uk"
   },
@@ -12,13 +13,15 @@ const portfolioItems = [
     title: "Lumina Energy",
     description: "A bold, conversion-focused site built for an energy company offering solar panels, micro hydro systems, and battery storage. Guides visitors from interest to instant quote in seconds. A great example of a modern, effective trade site.",
     image: "/assets/images/portfolio-2.webp",
+    imageSmall: "/assets/images/portfolio-2-400.webp",
     reverse: true,
     link: "https://showcase2.wyedesign.co.uk"
   },
   {
     title: "ClearView Window Cleaning",
     description: "A clean, trustworthy design for a local window cleaning business. Features easy quote requests, service areas, and customer testimonials to build local authority.",
-    image: "/assets/images/portfolio-3.jpg",
+    image: "/assets/images/portfolio-3.webp",
+    imageSmall: "/assets/images/portfolio-3-400.webp",
     reverse: false,
     link: "https://showcase3.wyedesign.co.uk"
   }
@@ -46,7 +49,11 @@ export default function Portfolio() {
                   <div className="w-full h-full rounded-t-lg overflow-hidden relative border-x border-t border-theme-bg-gray">
                     <img 
                       src={item.image} 
+                      srcSet={`${item.imageSmall} 400w, ${item.image} 800w`}
+                      sizes="(min-width: 1280px) 592px, (min-width: 1024px) calc(50vw - 72px), calc(100vw - 48px)"
                       alt={item.title} 
+                      width={800}
+                      height={533}
                       loading="lazy"
                       decoding="async"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"

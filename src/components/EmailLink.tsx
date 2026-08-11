@@ -1,7 +1,6 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { trackEvent } from "./Analytics";
 
 type EmailLinkProps = {
   className?: string;
@@ -13,7 +12,6 @@ export default function EmailLink({ className, children }: EmailLinkProps) {
     <a
       className={className}
       href="mailto:hello@wyedesign.co.uk"
-      onClick={() => trackEvent("contact_email_click", { location: "contact_page" })}
     >
       {children}
     </a>

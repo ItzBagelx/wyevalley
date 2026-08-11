@@ -6,5 +6,5 @@ import staticAssetsIncrementalCache from "@opennextjs/cloudflare/overrides/incre
 // binding is necessary.
 export default defineCloudflareConfig({
   incrementalCache: staticAssetsIncrementalCache,
-  enableCacheInterception: true,
+  enableCacheInterception: false,
 });

@@ -34,7 +34,7 @@ Add a Resend API key to `.env.local` to test form delivery locally. Never commit
    npm run deploy
    ```
 
-4. In the Cloudflare dashboard, open **Workers & Pages > wyevalley > Settings > Domains & Routes** and attach both `wyedesign.co.uk` and `www.wyedesign.co.uk`. The app permanently redirects the `www` hostname to `https://wyedesign.co.uk`.
+4. In the Cloudflare dashboard, open **Workers & Pages > wyevalley > Settings > Domains & Routes** and attach both `wyedesign.co.uk` and `www.wyedesign.co.uk`. The app permanently redirects HTTP and the `www` hostname to `https://wyedesign.co.uk`, preserving the path and query string.
 
 5. In Resend, verify `wyedesign.co.uk`. The app sends from and delivers enquiries to `hello@wyedesign.co.uk`.
 
