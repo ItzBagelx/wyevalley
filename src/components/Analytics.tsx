@@ -4,7 +4,7 @@ import Script from "next/script";
 import { useEffect, useState } from "react";
 
 const consentKey = "wye-design-analytics-consent";
-const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-K2DXS9S4GV";
 
 declare global {
   interface Window {
