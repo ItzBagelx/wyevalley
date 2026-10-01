@@ -14,7 +14,7 @@ export default function Home() {
         <section className="bg-theme-bg px-6 py-24">
           <div className="mx-auto max-w-7xl">
             <div className="mb-12 max-w-2xl">
-              <h2 className="text-4xl md:text-5xl">Focused pages for the way your customers search</h2>
+              <h2 className="text-4xl md:text-5xl">Find the right website service for your business</h2>
               <p className="mt-5 text-lg leading-relaxed text-theme-text-light">
                 Explore the service that best matches your business, then request a proposal when you are ready.
               </p>

@@ -11,6 +11,7 @@ const cacheablePages = new Set([
   "/small-business-web-design",
   "/terms",
   "/web-design-hereford",
+  "/website-cost-guide",
   "/website-hosting-maintenance",
   "/websites-for-trades",
   "/work",

@@ -102,6 +102,12 @@ export default function Pricing() {
             </div>
           </div>
         </div>
+        <p className="mt-10 text-center leading-relaxed text-theme-text-light">
+          Want to compare the full cost and ownership terms?{" "}
+          <Link href="/website-cost-guide" className="font-bold text-theme-accent underline underline-offset-4">
+            Read our small-business website cost guide
+          </Link>.
+        </p>
       </div>
     </section>
   );

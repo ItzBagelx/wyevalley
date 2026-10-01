@@ -1,8 +1,9 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import PageHero from "./PageHero";
 import SiteFrame from "./SiteFrame";
 import StructuredData from "./StructuredData";
-import { absoluteUrl, siteConfig } from "../lib/site";
+import { absoluteUrl } from "../lib/site";
 
 type ServicePoint = {
   title: string;
@@ -37,6 +38,7 @@ type ServicePageProps = {
   process: ProcessStep[];
   questions: Question[];
   related: RelatedLink[];
+  children?: ReactNode;
 };
 
 export default function ServicePage({
@@ -51,6 +53,7 @@ export default function ServicePage({
   process,
   questions,
   related,
+  children,
 }: ServicePageProps) {
   return (
     <SiteFrame>
@@ -138,6 +141,8 @@ export default function ServicePage({
           </div>
         </div>
       </section>
+
+      {children}
 
       <section className="border-y border-theme-bg-gray bg-theme-bg px-6 py-20 md:py-24">
         <div className="mx-auto max-w-7xl">
