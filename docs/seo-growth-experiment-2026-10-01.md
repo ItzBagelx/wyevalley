@@ -63,6 +63,32 @@ The next monitor should check the accepted pricing and maintenance requests alon
 
 Next monitoring: pricing and maintenance have crossed the indexing gate and need performance measurement, not another request. Follow the newly accepted About and Work queues separately, retain current URL Inspection over stale aggregate examples, and keep the deployed content experiment unchanged. Eligibility has improved; qualified clicks/impressions and enquiry growth are still unverified.
 
+### About/Work index outcomes and exact Analytics comparisons — 2 October, final evening check
+
+- Fresh URL Inspection confirms **`/about` is on Google / Page is indexed**. Google's displayed last crawl is **2 October 2026, 22:24:36**, by Googlebot smartphone; crawl allowed Yes, successful page fetch, indexing allowed Yes and the inspected URL selected as canonical. The sitemap and `/websites-for-trades` are reported discovery sources. Evidence: `/tmp/wye-about-indexed-2026-10-02.jpg`. This supersedes the earlier pending About request; no new request was sent.
+- Fresh inspection also confirms **`/work` is on Google / Page is indexed**, with a successful smartphone crawl displayed as **2 October 2026, 22:26:37**, crawl/indexing allowed Yes and the inspected URL selected as canonical. `/privacy-policy` is reported as a referring page. Its sitemap discovery field still has a temporary processing error, which does not negate Google's explicit indexed status. Evidence: `/tmp/wye-work-indexed-2026-10-02.jpg`. No repeat request or portfolio-claim change was made.
+- Navigating back to Sitemaps refreshed its current result: **Success**, submitted 2 October, last read 30 September and 11 discovered pages. Do not repeat the accepted submission to refresh this lagging aggregate.
+- Direct comparison reports in the authenticated Wye Analytics property now provide a more precise historical picture than the Home card. The prior statement that full history is unavailable must not be interpreted as an empty property across all older dates. These are **recorded Analytics counts**, not independently verified customer counts; missing consent, sample size and QA attribution remain relevant.
+
+| Analytics metric | 4 September–1 October | 7 August–3 September |
+| --- | ---: | ---: |
+| Total users (Events report) | 0 | 5 |
+| Sessions | 0 | 5 |
+| Engaged sessions | 0 | 4 |
+| Engagement rate | UI displays 0%; no sessions, so no meaningful measured rate | 80% |
+| Total recorded events | 0 | 40 |
+| `contact_cta_click` events | 0 | 7 |
+| `generate_lead` events | 0 | 1, customer status unverified |
+| Organic Search sessions | 0 | 1 |
+
+The previous period also has four Direct sessions and one enhanced-measurement `form_start`; that generic event is **not** the requested custom `proposal_form_start`. The complete eight-row Events table has no separate `proposal_form_start` or `contact_email_click` row for either period. Record those as not observed in these reports, not verified healthy delivery or verified absence of customer behaviour. The historical `generate_lead` has not been checked against a genuine enquiry or excluded as an older inbox test; do not call it a customer conversion. Both periods show zero key events in the acquisition report, separately from the historical event count; the saved 2 October lead-key-event configuration does not establish a new completed enquiry.
+
+The **25 September–1 October versus 18–24 September** seven-day Events and Traffic acquisition reports both finish loading with **No data available**, displaying zero users/events/sessions/engaged sessions on both sides. There is no usable engagement-rate denominator and no recorded row for any of the four requested enquiry-interaction events. These are empty recent reporting results, not proof the website had no visitors or inbox enquiries. The explicitly labelled 2 October QA visit is outside both selected comparisons; current Home Realtime has zero active users, whereas the earlier processed QA events remain evidence that current collection worked. Do not create more artificial visits just to make reports nonempty.
+
+Evidence: `/tmp/wye-analytics-events-28day-comparison-2026-10-02.jpg`, `/tmp/wye-analytics-traffic-28day-comparison-2026-10-02.jpg`, `/tmp/wye-analytics-events-7day-comparison-2026-10-02.jpg` and `/tmp/wye-analytics-traffic-7day-comparison-2026-10-02.jpg`. Report values were read only after loading completed, not from transient old values relabelled with a newly selected period. No form submission, site edit, Analytics setting change or new tracking visit was made during these read-only checks.
+
+Next evidence gate: About and Work now need performance measurement, not repeated indexing requests. Recheck actual standard-report ingestion after Google's processing interval, preserve the exact older baseline and investigate any sustained collection gap without assuming zero customers. The indexing improvements are verified; qualified organic clicks, impressions and enquiries have not yet demonstrated growth.
+
 ### Exact baseline and visibility diagnosis — 2 October
 
 - Downloaded untouched Search Console Excel exports for the fixed **1–28 September versus 4–31 August** Web-search comparison. Domain export: `/Users/nyehogan/Downloads/wyedesign.co.uk-Performance-on-Search-2026-10-02.xlsx`, SHA-256 `a372f922dcef566d637c94ec5bca4bf4d4cf7692d27bf77a086ea9a69142f2e2`. Main-site page-filter export: `/Users/nyehogan/Downloads/wyedesign.co.uk-Performance-on-Search-2026-10-02 (1).xlsx`, SHA-256 `c8a7247a548f5cbe79a586d9d7462e4c2b61164177526d5d11b04aa1d9ca2576`. Raw exports remain local, not committed or uploaded to another service.
