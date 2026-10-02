@@ -4,7 +4,7 @@
 
 **Deployed and verified live on 2 October 2026.** The user requested use of the task's own browser. Its authenticated Cloudflare session successfully refreshed the existing Wrangler authorization with narrow account/user/Workers/routes/zone permissions. The correct Wye Design account was verified. Publication dates were moved truthfully to 2 October before the final rebuild. No new account, wider security access, paid service, artificial traffic or outreach has been created.
 
-The organic-growth goal is not complete. Publication is verified; Google processing and a measurable growth outcome are separate evidence gates. Do not describe the new guide as indexed or the experiment as successful until those outcomes are verified.
+The organic-growth goal is not complete. Publication and the new guide's Google indexing are verified; a measurable growth outcome is a separate evidence gate. Do not describe the experiment as successful until qualified clicks and impressions improve over comparable complete periods.
 
 - Worker: `wyevalley`; account `b9f9a083ebaf2f893d196636eb8d95f0`.
 - Published version: `c5852a2e-b8cd-4109-9503-d2731a4be92a`.
@@ -30,6 +30,15 @@ The organic-growth goal is not complete. Publication is verified; Google process
 - Evidence screenshots: `/tmp/wye-analytics-realtime-verified-2026-10-02.jpg` and `/tmp/wye-generate-lead-key-event-2026-10-02.jpg`.
 
 Next monitoring run: confirm standard-report ingestion, exclude labelled QA where possible, compare genuine traffic only, and verify the newly queued Google pages/sitemap without repeat submissions. Organic growth remains unproven and the goal remains active.
+
+### Google indexing follow-through — 2 October
+
+- The new `/website-cost-guide` moved from “URL is unknown to Google” before its accepted request to **“URL is on Google” / “Page is indexed”** in the subsequent verified URL Inspection.
+- Google reported its last crawl as **2 Oct 2026, 15:37:00**, by Googlebot smartphone; crawl allowed Yes, page fetch Successful and indexing allowed Yes.
+- User-declared canonical is `https://wyedesign.co.uk/website-cost-guide`; Google-selected canonical is “Inspected URL”. HTTPS and one valid Breadcrumbs item were reported.
+- The sitemap table still showed Success, submitted 2 October, last read 30 September and 11 discovered pages. The guide's inspection showed no referring sitemap/page yet. Those discovery-report delays do not contradict its verified indexed status.
+- No repeat sitemap or indexing request was sent. Evidence screenshot: `/tmp/wye-cost-guide-indexed-2026-10-02.jpg`.
+- This verifies an additional page's eligibility for Search, not new impressions, clicks, rankings or enquiries. Do not count the earlier diagnostic Analytics session as growth. Keep the existing live content experiment unchanged and evaluate comparable complete post-deployment periods.
 
 ## Verified pre-experiment baseline
 
