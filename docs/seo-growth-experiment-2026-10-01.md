@@ -18,6 +18,19 @@ The organic-growth goal is not complete. Publication is verified; Google process
 - Priority Hereford and guide recrawl requests: both accepted on 2 October. Search Console displayed “Indexing requested” and confirmed each URL was added to the priority crawl queue. Hereford was already indexed; the new guide was “URL is unknown to Google” before the request. Do not interpret acceptance as the updated content being indexed or ranking higher.
 - Own-browser Analytics access is verified for the correct Wye Design property. In this browser Wye Design is Google account index `authuser=0` (the previous Safari index `authuser=1` selected a different account and was corrected without granting new access). On 2 October the property home still showed “No data received from your website yet”, with 0 active users/events/key events for 25 September–1 October. Full engagement/enquiry comparisons remain unavailable, not proven zero traffic or zero enquiries. Navigate to the property with the verified Wye account, not a browser-specific index copied blindly from another browser.
 
+### Analytics follow-through — 2 October
+
+- Verified web stream `15418030811` belongs to `https://wyedesign.co.uk` and uses `G-K2DXS9S4GV`; the live consented page loads that ID. Enhanced measurement is enabled. Google tag diagnostics show “Excellent”, “Tag is sending data. No issues detected.”
+- The only property data filter is Internal Traffic / Exclude / **Testing**. It is not an active exclusion filter. No filter, consent or security protection was disabled.
+- One diagnostic visit used `utm_source=automated_test&utm_medium=qa&utm_campaign=analytics_diagnostic_20261002`. It opened the cost guide, followed the proposal CTA and focused the empty name field. No personal information was entered and no form was submitted.
+- **Processed collection is now verified in GA Realtime:** 1 active user, `page_view` 2, `contact_cta_click` 1, `proposal_form_start` 1, `scroll` 1 and `session_start` 1. The two page titles were the cost guide and contact page. These are automated QA, not real customer activity, organic growth or a lead. The first-user-source card showed `(direct)` because this browser already had a prior Analytics identity; do not identify this test solely using first-user source. Use the diagnostic campaign/page URL and session attribution when excluding it.
+- The previous standard-report / stream “no data” messages are not evidence of a broken tag once processed Realtime events are verified. Standard reporting remains subject to processing delay; confirm its next complete data update before attempting historical engagement comparisons.
+- Found and corrected a conversion configuration gap: `generate_lead` was absent from the property's key-events list. It is now saved and checked as a key event, using the **existing coded event** (not a codeless page-view rule), counted once per event, with **no default monetary value**. Existing key events were left unchanged. No Google Ads conversion or ad account was created.
+- The site's coded `generate_lead` fires only after a successful production `/api/submit` response. Key-event configuration is verified; new live `generate_lead` collection and inbox delivery were not retested. CTA clicks and form starts remain non-key events and must not be counted as completed enquiries.
+- Evidence screenshots: `/tmp/wye-analytics-realtime-verified-2026-10-02.jpg` and `/tmp/wye-generate-lead-key-event-2026-10-02.jpg`.
+
+Next monitoring run: confirm standard-report ingestion, exclude labelled QA where possible, compare genuine traffic only, and verify the newly queued Google pages/sitemap without repeat submissions. Organic growth remains unproven and the goal remains active.
+
 ## Verified pre-experiment baseline
 
 Search Console was inspected on 1 October 2026. Its latest complete performance date was 28 September. GA's visible home view covered 24–30 September. Do not mix these windows.
