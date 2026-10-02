@@ -50,6 +50,17 @@ Next monitoring run: confirm standard-report ingestion, exclude labelled QA wher
 
 The next monitor should check the accepted pricing and maintenance requests alongside Hereford and the already-indexed guide, using current URL Inspection and the sitemap's actual next-read state. Requests are not indexed-page or traffic outcomes. Pending Google crawl/reporting is expected; do not churn copy or repeat submissions while collecting complete comparative data.
 
+### Exact baseline and visibility diagnosis — 2 October
+
+- Downloaded untouched Search Console Excel exports for the fixed **1–28 September versus 4–31 August** Web-search comparison. Domain export: `/Users/nyehogan/Downloads/wyedesign.co.uk-Performance-on-Search-2026-10-02.xlsx`, SHA-256 `a372f922dcef566d637c94ec5bca4bf4d4cf7692d27bf77a086ea9a69142f2e2`. Main-site page-filter export: `/Users/nyehogan/Downloads/wyedesign.co.uk-Performance-on-Search-2026-10-02 (1).xlsx`, SHA-256 `c8a7247a548f5cbe79a586d9d7462e4c2b61164177526d5d11b04aa1d9ca2576`. Raw exports remain local, not committed or uploaded to another service.
+- Domain-level exact counts reconcile independently across the complete Devices and Countries tables: **1 versus 2 clicks; 1,119 versus 1,324 impressions**. Impressions decreased **205 / 15.48%** before this experiment. These replace the rounded 1.12K / 1.32K values; they are not post-deployment results. The domain export includes the `showcase1`, `showcase2` and `showcase3` subdomains.
+- The design-demo pages have **86 versus 127 page-level impressions and no clicks in either period**. Search terms for the concepts' example businesses must not be presented as qualified demand for Wye Design's web-design service. No demo page or indexing setting was changed.
+- A second report uses **Page / URLs containing `https://wyedesign.co.uk/`**. Its Pages table has **1 versus 2 clicks and 1,426 versus 1,972 page-level impressions** across the main-site URLs. This is a distinct, URL-aggregated baseline, not the domain-property total. Its higher impression count is a counting-method difference, not growth. The filter warning says results might be partial; its exported Devices/Countries tables contain only 0 versus 1 click and 1,401 versus 1,891 impressions. Do not use those filtered subtotals as a complete traffic total or conclude that the main site had no UK clicks. Retain the exact Pages-table values and this discrepancy.
+- Exact tracked domain queries are `web design hereford` (116 versus 177 impressions; position 57.14 versus 69.97), `web design ross-on-wye` (41 versus 128; 61.66 versus 63.27), and the separate unhyphenated `web design ross on wye` (47 versus 43; 47.47 versus 56.02). All have zero reported clicks in both periods. Do not silently combine query spellings or compare URL-filtered query counts against this property-aggregated series. An export's zero position with zero impressions is unavailable, not rank zero.
+- The small-business page's Pages row shows **0 versus 456 impressions**, but fresh URL Inspection confirms **URL is on Google / Page is indexed**. Google reports a successful smartphone crawl on **24 September 2026, 21:48:26**, crawl/indexing allowed Yes and the inspected URL selected as canonical. Its sitemap discovery field has a temporary processing error, which does not negate the indexed result. Live HTML returns 200, `index, follow`, one self-canonical, low-cache headers and parseable JSON-LD. This rules out a current indexing block; it does not prove why visibility fell. No repeat indexing request or speculative copy change was made. Evidence: `/tmp/wye-small-business-indexed-2026-10-02.jpg`.
+
+Future measurement must keep the unchanged domain series for continuity, and separately track the same HTTPS main-site Page filter, individual priority landing pages and relevant web-design query spellings. Exclude concept-business searches and labelled Analytics QA from qualified-growth claims. Keep the same aggregation and filters on both sides of every comparison; do not subtract page-level demo totals from property-level impressions. Google's [data-grouping guidance](https://support.google.com/webmasters/answer/17011259?hl=en) and [filtering/limits explanation](https://developers.google.com/search/blog/2022/10/performance-data-deep-dive) explain why page/property totals and visible query rows can differ. The small-business page is a ranking/visibility follow-up, not an unindexed-page rescue. Preserve the live experiment while collecting complete post-deployment data.
+
 ## Verified pre-experiment baseline
 
 Search Console was inspected on 1 October 2026. Its latest complete performance date was 28 September. GA's visible home view covered 24–30 September. Do not mix these windows.
@@ -57,20 +68,20 @@ Search Console was inspected on 1 October 2026. Its latest complete performance 
 | Metric | 1–28 September | 4–31 August |
 | --- | ---: | ---: |
 | Search clicks | 1 | 2 |
-| Search impressions | approximately 1.12K | approximately 1.32K |
+| Search impressions | 1,119 | 1,324 |
 | CTR | 0.1% | 0.2% |
 | Average position | 55.9 | 66.1 |
 | Hereford landing-page impressions | 971 | 942 |
 | Hereford landing-page clicks | 0 | 1 |
-| Hereford landing-page average position | 63.4 | 77.4 |
+| Hereford landing-page average position | 63.35 | 77.38 |
 | Tracked Hereford query impressions | 116 | 177 |
 | Tracked Hereford query clicks | 0 | 0 |
-| Tracked Hereford query position | 57.1 | 70.0 |
+| Tracked Hereford query position | 57.14 | 69.97 |
 | Tracked Ross-on-Wye query impressions | 41 | 128 |
 | Tracked Ross-on-Wye query clicks | 0 | 0 |
-| Tracked Ross-on-Wye query position | 61.7 | 63.3 |
+| Tracked Ross-on-Wye query position | 61.66 | 63.27 |
 
-The site-wide impression totals and displayed CTR are UI-rounded, not exact exported values. Tiny click counts do not support confident conversion or CTR conclusions.
+The domain impression counts and page/query positions are now exact exported values, reconciled on 2 October for these unchanged baseline dates. The site-wide position and displayed CTR remain UI-rounded. Tiny click counts do not support confident conversion or CTR conclusions. The main-site-only URL-aggregated baseline above is separate and must not be mixed with this domain-property series.
 
 The latest complete 7-day comparison (22–28 September against 15–21 September) was 0 versus 1 click, 136 versus 126 impressions, 0% versus 0.8% CTR, and position 56.7 versus 52.8.
 
