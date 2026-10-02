@@ -40,6 +40,16 @@ Next monitoring run: confirm standard-report ingestion, exclude labelled QA wher
 - No repeat sitemap or indexing request was sent. Evidence screenshot: `/tmp/wye-cost-guide-indexed-2026-10-02.jpg`.
 - This verifies an additional page's eligibility for Search, not new impressions, clicks, rankings or enquiries. Do not count the earlier diagnostic Analytics session as growth. Keep the existing live content experiment unchanged and evaluate comparable complete post-deployment periods.
 
+### Remaining service-page indexing checks — 2 October
+
+- The broad Page indexing report still has a 21 September update date, so its 7-indexed / 9-not-indexed totals do not include the verified new guide. Its six discovered-not-indexed examples are `/about`, `/contact`, `/pricing`, `/terms`, `/website-hosting-maintenance` and `/work`. Do not use this old aggregate to contradict current URL Inspection results.
+- Fresh URL Inspection for `/pricing` shows **not indexed / URL is unknown to Google**. The first indexing request ended with Google's “We had a problem submitting your indexing request. Please try again later.” It was not accepted. The pricing page is part of the 2 October deployed update and already passed production tests.
+- Fresh inspection for `/website-hosting-maintenance` shows **Discovered – currently not indexed**, with the sitemap and `/websites-for-trades` identified as discovery sources and no recorded crawl. This is a commercially relevant pre-existing indexing gap, not a new performance inference. The targeted request was **accepted**; Google displayed “Indexing requested” and confirmed the priority crawl queue. Evidence: `/tmp/wye-maintenance-indexing-requested-2026-10-02.jpg`. Indexing itself remains unverified.
+- Before one retry of the failed pricing request, a fresh inspection changed its discovery state to **Discovered – currently not indexed**, with the sitemap now identified. It was still not indexed. That single retry then **succeeded**: Google displayed “Indexing requested” and confirmed the priority crawl queue. Evidence: `/tmp/wye-pricing-indexing-requested-2026-10-02.jpg`. Do not retry either accepted request merely because indexing is pending.
+- Both live routes return 200, `index, follow`, one correct self-canonical, low-cache HTML headers and parseable JSON-LD (pricing one block, maintenance two). The source robots rules allow both routes. No page content, prices, DNS or security setting was changed during this check.
+
+The next monitor should check the accepted pricing and maintenance requests alongside Hereford and the already-indexed guide, using current URL Inspection and the sitemap's actual next-read state. Requests are not indexed-page or traffic outcomes. Pending Google crawl/reporting is expected; do not churn copy or repeat submissions while collecting complete comparative data.
+
 ## Verified pre-experiment baseline
 
 Search Console was inspected on 1 October 2026. Its latest complete performance date was 28 September. GA's visible home view covered 24–30 September. Do not mix these windows.
