@@ -55,7 +55,7 @@ try {
   }));
   assert.equal(entries.length, 12, "sitemap has 12 pages");
   for (const path of paths) {
-    assert.equal(entries.find((e) => e.url === `https://wyedesign.co.uk${path === "/" ? "/" : path}`)?.modified, "2026-10-01T00:00:00.000Z", `${path}: truthful update date`);
+    assert.equal(entries.find((e) => e.url === `https://wyedesign.co.uk${path === "/" ? "/" : path}`)?.modified, "2026-10-02T00:00:00.000Z", `${path}: truthful update date`);
   }
   assert.equal(entries.find((e) => e.url.endsWith("/about"))?.modified, "2026-08-11T00:00:00.000Z", "unchanged page keeps its date");
 

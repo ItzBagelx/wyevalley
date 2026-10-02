@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { absoluteUrl } from "../lib/site";
 
 const originalLastModified = "2026-08-11T00:00:00.000Z";
-const contentUpdate = "2026-10-01T00:00:00.000Z";
+const contentUpdate = "2026-10-02T00:00:00.000Z";
 
 const pages = [
   { path: "", changeFrequency: "weekly", priority: 1, lastModified: contentUpdate },

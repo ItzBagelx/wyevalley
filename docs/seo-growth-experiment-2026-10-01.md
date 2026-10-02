@@ -2,9 +2,21 @@
 
 ## Status
 
-Prepared locally; **not yet deployed**. Cloudflare's existing deployment login has expired and cannot refresh automatically. Safari and the task's in-app browser both require Cloudflare sign-in. The user has been asked to sign in to the existing account in Safari. No new account, wider security access, paid service, artificial traffic or outreach has been created.
+**Deployed and verified live on 2 October 2026.** The user requested use of the task's own browser. Its authenticated Cloudflare session successfully refreshed the existing Wrangler authorization with narrow account/user/Workers/routes/zone permissions. The correct Wye Design account was verified. Publication dates were moved truthfully to 2 October before the final rebuild. No new account, wider security access, paid service, artificial traffic or outreach has been created.
 
-The organic-growth goal is not complete. Do not describe these edits as live, indexed or successful until those separate outcomes are verified. The original site remains live during this login blocker.
+The organic-growth goal is not complete. Publication is verified; Google processing and a measurable growth outcome are separate evidence gates. Do not describe the new guide as indexed or the experiment as successful until those outcomes are verified.
+
+- Worker: `wyevalley`; account `b9f9a083ebaf2f893d196636eb8d95f0`.
+- Published version: `c5852a2e-b8cd-4109-9503-d2731a4be92a`.
+- Previous production version, retained for rollback: `153f2e58-7e33-4087-9988-79740bee7b91`.
+- Source: prepared commit `546b4b0` plus the 2 October publication-date corrections recorded in Git.
+- `npm run lint`, final OpenNext build, `git diff --check`, local Cloudflare preview checks and `SEO_CHECK_URL=https://wyedesign.co.uk npm run check:seo`: passed on 2 October.
+- Production verifies all four changed pages at 375px and 1440px: HTTP 200, correct self-canonicals/descriptions/JSON-LD, internal links, no whole-page horizontal overflow or browser runtime errors; sitemap has 12 pages and truthful per-page dates; missing URL returns 404 with noindex and no canonical.
+- HTTP apex, HTTP www and HTTPS www each return a single 301 to HTTPS non-www, retaining the path and query.
+- Empty-JSON validation at `/api/submit` returns 400 with the required-fields message; this did not send email and is not a new inbox-delivery test.
+- Search Console accepted the refreshed sitemap with “Sitemap submitted successfully”. Its table now records submission on 2 October but still shows the previous 30 September read / 11 discovered pages. That delayed count does not yet confirm Google processed the live 12-page sitemap.
+- Priority Hereford and guide recrawl requests: both accepted on 2 October. Search Console displayed “Indexing requested” and confirmed each URL was added to the priority crawl queue. Hereford was already indexed; the new guide was “URL is unknown to Google” before the request. Do not interpret acceptance as the updated content being indexed or ranking higher.
+- Own-browser Analytics access is verified for the correct Wye Design property. In this browser Wye Design is Google account index `authuser=0` (the previous Safari index `authuser=1` selected a different account and was corrected without granting new access). On 2 October the property home still showed “No data received from your website yet”, with 0 active users/events/key events for 25 September–1 October. Full engagement/enquiry comparisons remain unavailable, not proven zero traffic or zero enquiries. Navigate to the property with the verified Wye account, not a browser-specific index copied blindly from another browser.
 
 ## Verified pre-experiment baseline
 
@@ -62,14 +74,12 @@ No ranking, lead volume, commissioned client result, testimonial, office or loca
 
 ## Deployment and Google follow-through
 
-1. When the user has signed in, refresh Wrangler's existing deployment login using the minimal account/user/Workers/routes/zone scopes required by this already-deployed site. Do not expose tokens or broaden permissions. If a genuinely new access grant or legal agreement is requested, use the normal approval boundary.
-2. Rebuild the final OpenNext package and run the repeatable checks against its local preview. The tests default to a local server on port 3084 and accept `SEO_CHECK_URL` for another local or live base URL.
-3. Deploy the existing `wyevalley` Worker using the project's documented workflow. Do not change the account, prices, DNS, security protections or hosting provider.
-4. Run `SEO_CHECK_URL=https://wyedesign.co.uk npm run check:seo`. Verify the actual updated Hereford title, new guide, HTTPS/canonical/cache behavior and sitemap in production. Record the actual deployed version/date here. If publication is on a later date, update the guide's publication date and changed-route lastmod values truthfully before deploying, including the matching test expectations.
-5. Request indexing in the authorised Search Console session for the updated Hereford page and new guide. Verify the sitemap submission/read state. “Indexing requested” is a queue entry, not proof of indexing or a ranking gain.
-6. Keep the 1 October pre-experiment baseline above. Compare complete 7-day and 28-day windows, plus matching page/query results, after the actual deployment date. Give the experiment at least 28 complete days where possible and avoid overlapping major changes.
+1. Deployment and production verification completed on 2 October; use the version and evidence above. Future publishing should retain the narrow existing authorization and documented OpenNext workflow. Do not expose tokens or broaden permissions.
+2. Search Console sitemap resubmission accepted on 2 October; monitor its next read for the 12-page count and errors. “Submitted successfully” is not proof every URL is indexed.
+3. Priority indexing requests for Hereford and the guide were accepted on 2 October. Monitor processing; do not repeat submissions unless justified by a genuine indexing issue. “Indexing requested” is a queue entry, not proof of indexing or a ranking gain.
+4. Keep the 1 October pre-experiment baseline above. Compare complete 7-day and 28-day windows, plus matching page/query results, after the 2 October deployment. Give the experiment at least 28 complete days where possible and avoid overlapping major changes. The first fully post-deployment 28-day window is 3–30 October, subject to Search Console's reporting delay.
 
-The weekly heartbeat `wye-design-seo-growth-monitor` remains active and now pursues evidence-backed improvements, not only passive reporting. It reads this file, completes pending deployment when authorised access is available, measures the experiment and notifies only for meaningful changes or a new required action. Do not repeatedly notify the unchanged login blocker.
+The weekly heartbeat `wye-design-seo-growth-monitor` remains active and pursues evidence-backed improvements, not only passive reporting. It reads this file, follows any unfinished Google requests, measures this now-live experiment and notifies only for meaningful changes or a new required action. The Cloudflare login blocker is resolved; do not report it as current or republish this experiment unnecessarily.
 
 ## Next evidence gate
 

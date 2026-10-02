@@ -30,8 +30,8 @@ export default function WebsiteCostGuidePage() {
             headline: title,
             description,
             mainEntityOfPage: absoluteUrl("/website-cost-guide"),
-            datePublished: "2026-10-01",
-            dateModified: "2026-10-01",
+            datePublished: "2026-10-02",
+            dateModified: "2026-10-02",
             author: { "@type": "Organization", name: siteConfig.name, url: absoluteUrl("/about") },
             publisher: { "@id": absoluteUrl("/#organization") },
           },
@@ -55,7 +55,7 @@ export default function WebsiteCostGuidePage() {
       </PageHero>
       <article className="bg-theme-bg-light px-6 py-20 md:py-24">
         <div className="mx-auto max-w-4xl space-y-16">
-          <p className="text-sm text-theme-text-light">By <Link href="/about" className="underline underline-offset-4">Wye Design</Link> · Published <time dateTime="2026-10-01">1 October 2026</time></p>
+          <p className="text-sm text-theme-text-light">By <Link href="/about" className="underline underline-offset-4">Wye Design</Link> · Published <time dateTime="2026-10-02">2 October 2026</time></p>
           <section aria-labelledby="cost-comparison">
             <h2 id="cost-comparison" className="text-3xl md:text-4xl">Monthly or upfront: compare the first 24 months</h2>
             <p className="mt-5 text-lg leading-relaxed text-theme-text-light">
