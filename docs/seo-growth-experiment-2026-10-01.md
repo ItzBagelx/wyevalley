@@ -74,6 +74,22 @@ Next monitoring: pricing and maintenance have crossed the indexing gate and need
 
 Future measurement must keep the unchanged domain series for continuity, and separately track the same HTTPS main-site Page filter, individual priority landing pages and relevant web-design query spellings. Exclude concept-business searches and labelled Analytics QA from qualified-growth claims. Keep the same aggregation and filters on both sides of every comparison; do not subtract page-level demo totals from property-level impressions. Google's [data-grouping guidance](https://support.google.com/webmasters/answer/17011259?hl=en) and [filtering/limits explanation](https://developers.google.com/search/blog/2022/10/performance-data-deep-dive) explain why page/property totals and visible query rows can differ. The small-business page is a ranking/visibility follow-up, not an unindexed-page rescue. Preserve the live experiment while collecting complete post-deployment data.
 
+### Repeatable read-only measurement check — 2 October
+
+`scripts/analyse-search-console.mjs` now checks untouched Search Console comparison Excel exports and prints JSON without changing the workbook, Google settings or the website. The weekly monitor should use it after obtaining a current export from the correct authenticated property. It does not sign in, export data from Google or verify Google's reporting freshness by itself.
+
+1. Verify `sc-domain:wyedesign.co.uk`, Web search and the latest complete reporting date in the signed-in Search Console UI. Export matching complete 7-day and 28-day periods against their immediately preceding equivalent periods. Preserve the separate unfiltered domain and exact `Page: +https://wyedesign.co.uk/` series. Do not add query, country or device filters to these baselines.
+2. Call `load_workspace_dependencies` for the current bundled Node executable and modules directory. Run the checker with `WYE_ANALYSIS_MODULES` set to that returned modules path; no package installation or production dependency change is required. Example invocation from this repository, substituting the actual returned runtime paths, current export and UI-verified cutoff:
+
+   ```sh
+   WYE_ANALYSIS_MODULES="/returned/node/node_modules" "/returned/node/bin/node" scripts/analyse-search-console.mjs "/path/to/untouched-export.xlsx" --latest-complete-date YYYY-MM-DD
+   ```
+
+3. Read the output's source hash, periods, filters, reconciliation flags and deployment-period classification before comparing results. Use a period ending on the latest complete date for ongoing monitoring; an older fixed period is permitted only for explicitly labelled baseline reproduction. The CLI accepts only the recorded UK-format/English comparison-export structure; an unsupported layout or inconsistent date/filter must be investigated, not coerced into zero data.
+4. Keep property totals, HTTPS main-site Page-table subtotals, demo subtotals and relevant query spellings separate. Missing rows and zero-impression ranks remain unavailable; page-filter discrepancies remain visible. Exports alone always leave qualified growth unverified. Check live Google state, query intent, Analytics attribution and genuine enquiries separately, excluding labelled QA.
+
+Verification: `npm run check:search-data` passes **26 unit tests** using explicitly synthetic inputs. A separate end-to-end check imported both original 2 October exports above, verified their unchanged SHA-256 hashes, reproduced the exact domain and main-site baselines, detected the filtered-report discrepancy, retained the small-business zero-impression position as unavailable and classified these September results as pre-deployment. Unit fixtures are not traffic evidence. No new visitor session, form submission, deployment, price or copy change was made for this measurement tooling.
+
 ## Verified pre-experiment baseline
 
 Search Console was inspected on 1 October 2026. Its latest complete performance date was 28 September. GA's visible home view covered 24–30 September. Do not mix these windows.

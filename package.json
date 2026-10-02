@@ -13,7 +13,8 @@
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "clean": "rm -rf .next .open-next dist",
     "lint": "tsc --noEmit",
-    "check:seo": "node scripts/verify-seo-growth.mjs"
+    "check:seo": "node scripts/verify-seo-growth.mjs",
+    "check:search-data": "node --test scripts/analyse-search-console.test.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
