@@ -1,7 +1,7 @@
 {
-  "name": "react-example",
+  "name": "wye-design",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "next dev",
@@ -15,14 +15,12 @@
     "lint": "tsc --noEmit",
     "check:seo": "node scripts/verify-seo-growth.mjs",
     "check:search-data": "node --test scripts/analyse-search-console.test.mjs",
-    "check:conversions": "node --test scripts/conversion-tracking.test.mjs scripts/conversion-integration.test.mjs"
+    "check:conversions": "node --test scripts/conversion-tracking.test.mjs scripts/conversion-integration.test.mjs",
+    "check:readability": "node --test scripts/readability.test.mjs"
   },
   "dependencies": {
-    "@google/genai": "^2.4.0",
     "lucide-react": "^0.546.0",
-    "motion": "^12.23.24",
     "next": "^15.5.20",
-    "puppeteer": "^25.3.0",
     "react": "^19.0.1",
     "react-dom": "^19.0.1"
   },
@@ -36,6 +34,7 @@
     "eslint": "^9.21.0",
     "eslint-config-next": "15.2.0",
     "postcss": "^8.5.3",
+    "puppeteer": "^25.3.0",
     "tailwindcss": "^4.1.14",
     "typescript": "~5.8.2",
     "wrangler": "^4.112.0"

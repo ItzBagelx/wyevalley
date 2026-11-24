@@ -3,6 +3,7 @@ import { absoluteUrl } from "../lib/site";
 
 const originalLastModified = "2026-08-11T00:00:00.000Z";
 const contentUpdate = "2026-10-02T00:00:00.000Z";
+const portfolioUpdate = "2026-11-24T00:00:00.000Z";
 
 const pages = [
   { path: "", changeFrequency: "weekly", priority: 1, lastModified: contentUpdate },
@@ -10,7 +11,7 @@ const pages = [
   { path: "/websites-for-trades", changeFrequency: "monthly", priority: 0.8 },
   { path: "/small-business-web-design", changeFrequency: "monthly", priority: 0.8 },
   { path: "/website-hosting-maintenance", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/work", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/work", changeFrequency: "monthly", priority: 0.8, lastModified: portfolioUpdate },
   { path: "/pricing", changeFrequency: "monthly", priority: 0.8, lastModified: contentUpdate },
   { path: "/website-cost-guide", changeFrequency: "monthly", priority: 0.7, lastModified: contentUpdate },
   { path: "/about", changeFrequency: "yearly", priority: 0.6 },
