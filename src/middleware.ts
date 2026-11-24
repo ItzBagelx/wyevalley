@@ -24,7 +24,8 @@ export function middleware(request: NextRequest) {
   const forwardedProtocol = request.headers.get("x-forwarded-proto")?.split(",")[0].trim();
   const isHttp = forwardedProtocol ? forwardedProtocol === "http" : request.nextUrl.protocol === "http:";
 
-  if (host === alternateHost || isHttp) {
+  // Only canonicalize the site's own hosts: local previews must stay local.
+  if (host === alternateHost || (host === preferredHost && isHttp)) {
     const destination = `https://${preferredHost}${request.nextUrl.pathname}${request.nextUrl.search}`;
 
     return NextResponse.redirect(destination, 301);

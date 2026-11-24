@@ -14,7 +14,8 @@
     "clean": "rm -rf .next .open-next dist",
     "lint": "tsc --noEmit",
     "check:seo": "node scripts/verify-seo-growth.mjs",
-    "check:search-data": "node --test scripts/analyse-search-console.test.mjs"
+    "check:search-data": "node --test scripts/analyse-search-console.test.mjs",
+    "check:conversions": "node --test scripts/conversion-tracking.test.mjs scripts/conversion-integration.test.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

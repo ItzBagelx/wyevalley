@@ -26,7 +26,7 @@ export default function Footer({ showProposalCta = true }: FooterProps) {
           <div className="w-full lg:w-7/12 flex flex-col justify-center">
             <div className="bg-theme-accent text-theme-bg p-10 md:p-14 rounded-3xl shadow-2xl relative overflow-hidden h-full flex flex-col justify-center">
               <h3 className="text-3xl font-serif italic mb-6 text-white">Let's build something great.</h3>
-              <p className="text-white/70 mb-10 leading-relaxed max-w-md">
+              <p className="text-white mb-10 leading-relaxed max-w-md">
                 Tell us about your business and goals, and we&apos;ll get back to you by email about the next step.
               </p>
               <Link
@@ -41,7 +41,7 @@ export default function Footer({ showProposalCta = true }: FooterProps) {
         </div>
       )}
 
-      <div className={`max-w-7xl mx-auto pt-6 border-t border-theme-bg-gray flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest text-theme-text-dark opacity-60 font-bold ${showProposalCta ? "mt-24" : ""}`}>
+      <div className={`max-w-7xl mx-auto pt-6 border-t border-theme-bg-gray flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest text-theme-text-dark font-bold ${showProposalCta ? "mt-24" : ""}`}>
         <p>&copy; {new Date().getFullYear()} Wye Design. All rights reserved.</p>
         <div className="flex gap-6">
           <Link href="/privacy-policy" className="hover:text-theme-accent transition-colors">Privacy Policy</Link>

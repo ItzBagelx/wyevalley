@@ -34,7 +34,7 @@ export default function Portfolio() {
         <div className="mb-20 text-center">
           <h2 className="text-4xl md:text-5xl font-serif italic mb-6 text-theme-text-dark">Our Work</h2>
           <p className="text-lg text-theme-text-light font-normal max-w-2xl mx-auto mb-2">A few directions showing how clear structure and strong visual hierarchy can work for local businesses.</p>
-          <p className="text-sm text-theme-text-light/70 italic max-w-2xl mx-auto">These are concept projects that demonstrate design capabilities, not commissioned client sites.</p>
+          <p className="text-sm text-theme-text-light italic max-w-2xl mx-auto">These are concept projects that demonstrate design capabilities, not commissioned client sites.</p>
         </div>
 
         <div className="space-y-32">

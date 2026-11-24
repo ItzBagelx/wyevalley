@@ -2,32 +2,33 @@
 
 import Script from "next/script";
 import { useEffect, useState } from "react";
+import {
+  analyticsConsentKey,
+  initializeAnalytics,
+  isAnalyticsEnabled,
+  measurementId,
+  trackEvent,
+} from "../lib/analytics";
 
-const consentKey = "wye-design-analytics-consent";
-const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-K2DXS9S4GV";
-
-declare global {
-  interface Window {
-    dataLayer?: unknown[];
-    gtag?: (...args: unknown[]) => void;
-  }
-}
-
-export function trackEvent(name: string, parameters?: Record<string, string>) {
-  if (typeof window !== "undefined" && window.gtag) {
-    window.gtag("event", name, parameters);
-  }
-}
+export { trackEvent } from "../lib/analytics";
 
 export default function Analytics() {
   const [consent, setConsent] = useState<"accepted" | "rejected" | null>(null);
 
   useEffect(() => {
-    const savedConsent = window.localStorage.getItem(consentKey);
-    if (savedConsent === "accepted" || savedConsent === "rejected") {
-      setConsent(savedConsent);
+    try {
+      const savedConsent = window.localStorage.getItem(analyticsConsentKey);
+      if (savedConsent === "accepted" || savedConsent === "rejected") {
+        setConsent(savedConsent);
+      }
+    } catch {
+      // Optional analytics stays disabled when storage is unavailable.
     }
   }, []);
+
+  useEffect(() => {
+    if (consent === "accepted") initializeAnalytics();
+  }, [consent]);
 
   useEffect(() => {
     const trackConversionClick = (event: MouseEvent) => {
@@ -59,28 +60,21 @@ export default function Analytics() {
   }
 
   const chooseConsent = (choice: "accepted" | "rejected") => {
-    window.localStorage.setItem(consentKey, choice);
+    try {
+      window.localStorage.setItem(analyticsConsentKey, choice);
+    } catch {
+      // Do not enable collection if the consent choice cannot be persisted.
+    }
     setConsent(choice);
   };
 
   return (
     <>
-      {consent === "accepted" && (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
-            strategy="afterInteractive"
-          />
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              window.gtag = gtag;
-              gtag('js', new Date());
-              gtag('config', '${measurementId}', { anonymize_ip: true });
-            `}
-          </Script>
-        </>
+      {consent === "accepted" && isAnalyticsEnabled() && (
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
+          strategy="afterInteractive"
+        />
       )}
 
       {consent === null && (

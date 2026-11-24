@@ -57,7 +57,7 @@ export default function Navbar() {
           </div>
 
           <Link
-            href="/contact"
+            href="/contact#proposal"
             className="hidden items-center gap-2 rounded-full bg-theme-accent px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-transform hover:-translate-y-0.5 md:inline-flex md:justify-self-end"
           >
             Request a proposal <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
@@ -66,6 +66,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2 md:hidden">
             <Link
               href="/contact#proposal"
+              onClick={() => setIsMobileMenuOpen(false)}
               className="inline-flex items-center gap-1.5 rounded-full border border-theme-accent/20 bg-white/55 px-3 py-2 text-[0.63rem] font-bold uppercase tracking-[0.12em] text-theme-accent transition-colors hover:bg-white"
             >
               Enquire <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
@@ -113,7 +114,8 @@ export default function Navbar() {
               ))}
             </div>
             <Link
-              href="/contact"
+              href="/contact#proposal"
+              onClick={() => setIsMobileMenuOpen(false)}
               className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-theme-accent px-5 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-[0_10px_20px_rgba(74,93,78,0.18)]"
             >
               Request a proposal <ArrowRight className="h-4 w-4" aria-hidden="true" />

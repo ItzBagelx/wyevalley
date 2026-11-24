@@ -3,6 +3,7 @@
 import { FormEvent, useRef, useState } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { trackEvent } from "./Analytics";
+import { isAcceptedProposal } from "../lib/proposal-tracking";
 
 type FormValues = {
   name: string;
@@ -40,8 +41,7 @@ export default function ContactForm() {
 
   const trackStart = () => {
     if (!hasTrackedStart.current) {
-      trackEvent("proposal_form_start", { form_name: "website_proposal" });
-      hasTrackedStart.current = true;
+      hasTrackedStart.current = trackEvent("proposal_form_start", { form_name: "website_proposal" });
     }
   };
 
@@ -62,13 +62,15 @@ export default function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       });
-      const result = (await response.json()) as { error?: string };
+      const result = (await response.json()) as { error?: string; success?: boolean; id?: string };
 
       if (!response.ok) {
         throw new Error(result.error || "We could not send your request just now.");
       }
 
-      trackEvent("generate_lead", { form_name: "website_proposal" });
+      if (isAcceptedProposal(result)) {
+        trackEvent("generate_lead", { form_name: "website_proposal" });
+      }
       setState("success");
     } catch (error) {
       setState("error");
